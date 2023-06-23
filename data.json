@@ -1,53 +1,60 @@
-[
-    {
-      "question": "What is the fastest type of shark?",
-      "options": [
-        "Great White",
-        "Hammerhead",
-        "Mako",
-        "Tiger"
-      ],
-      "answer": "Mako"
-    },
-    {
-      "question": "What is the oldest estimated age of a Greenland shark?",
-      "options": [
-        "100",
-        "200",
-        "300",
-        "400"
-      ],
-      "answer": "400"
-    },
-    {
-      "question": "Which animal has the largest brain in ratio to its body size?",
-      "options": [
-        "Dolphin",
-        "Elephant",
-        "Human",
-        "Sperm Whale"
-      ],
-      "answer": "Sperm Whale"
-    },
-    {
-      "question": "Which animal has the largest claws?",
-      "options": [
-        "Grizzly Bear",
-        "Lion",
-        "Tiger",
-        "Giant Armadillo"
-      ],
-      "answer": "Giant Armadillo"
-    },
-    {
-      "question": "Which bird has the largest wingspan?",
-      "options": [
-        "Albatross",
-        "Condor",
-        "Eagle",
-        "Pelican"
-      ],
-      "answer": "Albatross"
-    }
-  ]
+{
+    "categories": [
+      {
+        "name": "Wildlife",
+        "questions": [
+          {
+            "question": "What is the fastest type of shark?",
+            "options": ["Great White", "Hammerhead", "Mako", "Tiger"],
+            "answer": "Mako"
+          },
+          {
+            "question": "What is the oldest estimated age of a Greenland shark?",
+            "options": ["100", "200", "300", "400"],
+            "answer": "400"
+          },
+          {
+            "question": "Which animal has the largest brain in ratio to its body size?",
+            "options": ["Dolphin", "Elephant", "Human", "Sperm Whale"],
+            "answer": "Sperm Whale"
+          },
+          {
+            "question": "Which animal is known for its exceptional memory?",
+            "options": ["Elephant", "Octopus", "Dog", "Chimpanzee"],
+            "answer": "Elephant"
+          },
+          {
+            "question": "Which animal can hold its breath the longest underwater?",
+            "options": ["Hippo", "Seal", "Turtle", "Whale"],
+            "answer": "Whale"
+          },
+          {
+            "question": "Which animal is the largest mammal on Earth?",
+            "options": ["Elephant", "Giraffe", "Blue Whale", "Gorilla"],
+            "answer": "Blue Whale"
+          },
+          {
+            "question": "Which bird has the largest wingspan?",
+            "options": ["Albatross", "Condor", "Eagle", "Pelican"],
+            "answer": "Albatross"
+          },
+          {
+            "question": "Which bird can fly backward?",
+            "options": ["Hummingbird", "Ostrich", "Penguin", "Kiwi"],
+            "answer": "Hummingbird"
+          },
+          {
+            "question": "Which bird is the symbol of wisdom?",
+            "options": ["Owl", "Eagle", "Peacock", "Swan"],
+            "answer": "Owl"
+          },
+          {
+            "question": "Which bird is known for its ability to mimic human speech?",
+            "options": ["Parrot", "Flamingo", "Sparrow", "Crow"],
+            "answer": "Parrot"
+          }
+        ]
+      }
+    ]
+  }
   
