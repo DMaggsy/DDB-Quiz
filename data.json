@@ -1,0 +1,53 @@
+[
+    {
+      "question": "What is the fastest type of shark?",
+      "options": [
+        "Great White",
+        "Hammerhead",
+        "Mako",
+        "Tiger"
+      ],
+      "answer": "Mako"
+    },
+    {
+      "question": "What is the oldest estimated age of a Greenland shark?",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ],
+      "answer": "400"
+    },
+    {
+      "question": "Which animal has the largest brain in ratio to its body size?",
+      "options": [
+        "Dolphin",
+        "Elephant",
+        "Human",
+        "Sperm Whale"
+      ],
+      "answer": "Sperm Whale"
+    },
+    {
+      "question": "Which animal has the largest claws?",
+      "options": [
+        "Grizzly Bear",
+        "Lion",
+        "Tiger",
+        "Giant Armadillo"
+      ],
+      "answer": "Giant Armadillo"
+    },
+    {
+      "question": "Which bird has the largest wingspan?",
+      "options": [
+        "Albatross",
+        "Condor",
+        "Eagle",
+        "Pelican"
+      ],
+      "answer": "Albatross"
+    }
+  ]
+  
