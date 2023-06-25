@@ -63,6 +63,7 @@
   
   button:hover {
     background-color: #45a049;
+    border: #333333;
   }
   
   /* Style the footer */
