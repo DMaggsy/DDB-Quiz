@@ -4,28 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentCategoryIndex = 0;
     var currentQuestionIndex = 0;
     var score = 0;
-  
+
     // Get the start button element
     var startButton = document.getElementById('start-btn');
-  
+
     // Get the question container elements
     var questionContainer = document.getElementById('question-container');
     var questionElement = document.getElementById('question');
     var optionsElement = document.getElementById('options');
-  
+
     // Get the submit button and result elements
     var submitButton = document.getElementById('submit-btn');
     var resultElement = document.getElementById('result');
-  
+
     // Add event listener to the start button
     startButton.addEventListener('click', startQuiz);
-  
+
     // Function to start the quiz
     function startQuiz() {
       // Hide the start button and show the question container
       startButton.style.display = 'none';
       questionContainer.style.display = 'block';
-  
+
       // Load the categories from the JSON file
       loadCategories();
     }
