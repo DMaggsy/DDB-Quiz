@@ -2,75 +2,74 @@
 
 /* Reset default margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Set a background color for the body */
-  body {
-    background-color: #f2f2f2;
-  }
-  
-  /* Style the container */
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: antiquewhite;
-  }
-  
-  /* Style the header */
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    text-decoration: underline;
-  }
-  
-  .header h1 {
-    color: #333333;
-    font-size: 24px;
-  }
-  
-  /* Style the content */
-  .content {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .content h2 {
-    color: #333333;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .content p {
-    color: #666666;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-    border: #333333;
-  }
-  
-  /* Style the footer */
-  .footer {
-    text-align: center;
-    color: #666666;
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Style the container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: antiquewhite;
+}
+
+/* Style the header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.header h1 {
+  color: #333333;
+  font-size: 24px;
+}
+
+/* Style the content */
+.content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  color: #333333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+  border: #333333;
+}
+
+/* Style the footer */
+.footer {
+  text-align: center;
+  color: #666666;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
