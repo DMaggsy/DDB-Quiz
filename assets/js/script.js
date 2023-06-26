@@ -1,111 +1,165 @@
-const questions = {
-    "categories": [{
-            "name": "Wildlife",
-            "questions": [{
-                    "question": "What is the fastest type of shark?",
-                    "options": ["Great White", "Hammerhead", "Mako", "Tiger"],
-                    "answer": "Mako"
-                },
-                {
-                    "question": "What is the oldest estimated age of a Greenland shark?",
-                    "options": ["100", "200", "300", "400"],
-                    "answer": "400"
-                },
-                {
-                    "question": "Which animal has the largest brain in ratio to its body size?",
-                    "options": ["Dolphin", "Elephant", "Human", "Sperm Whale"],
-                    "answer": "Sperm Whale"
-                },
-                {
-                    "question": "Which animal is known for its exceptional memory?",
-                    "options": ["Elephant", "Octopus", "Dog", "Chimpanzee"],
-                    "answer": "Elephant"
-                },
-                {
-                    "question": "Which animal can hold its breath the longest underwater?",
-                    "options": ["Hippo", "Seal", "Turtle", "Whale"],
-                    "answer": "Whale"
-                },
-                {
-                    "question": "Which animal is the largest mammal on Earth?",
-                    "options": ["Elephant", "Giraffe", "Blue Whale", "Gorilla"],
-                    "answer": "Blue Whale"
-                },
-                {
-                    "question": "Which bird has the largest wingspan?",
-                    "options": ["Albatross", "Condor", "Eagle", "Pelican"],
-                    "answer": "Albatross"
-                },
-                {
-                    "question": "Which bird can fly backward?",
-                    "options": ["Hummingbird", "Ostrich", "Penguin", "Kiwi"],
-                    "answer": "Hummingbird"
-                },
-                {
-                    "question": "Which bird is the symbol of wisdom?",
-                    "options": ["Owl", "Eagle", "Peacock", "Swan"],
-                    "answer": "Owl"
-                },
-                {
-                    "question": "Which bird is known for its ability to mimic human speech?",
-                    "options": ["Parrot", "Flamingo", "Sparrow", "Crow"],
-                    "answer": "Parrot"
-                }
-            ]
-        },
-        {
-            "name": "Motorbikes",
-            "questions": [{
-                    "question": "What is the top speed of the Kawasaki Ninja H2R?",
-                    "options": ["200 km/h", "300 km/h", "400 km/h", "500 km/h"],
-                    "answer": "400 km/h"
-                },
-                {
-                    "question": "Which motorcycle brand holds the record for the most Grand Prix Motorcycle Racing World Championships?",
-                    "options": ["Honda", "Yamaha", "Ducati", "Suzuki"],
-                    "answer": "Honda"
-                },
-                {
-                    "question": "What is the engine displacement of the Harley-Davidson Fat Boy?",
-                    "options": ["750cc", "1200cc", "1600cc", "1800cc"],
-                    "answer": "1800cc"
-                },
-                {
-                    "question": "Which motorcycle company introduced the first mass-produced electric motorcycle?",
-                    "options": ["Zero Motorcycles", "Harley-Davidson", "BMW Motorrad", "Ducati"],
-                    "answer": "Zero Motorcycles"
-                },
-                {
-                    "question": "What is the purpose of a catalytic converter in a motorcycle's exhaust system?",
-                    "options": ["Increasing top speed", "Enhancing fuel efficiency", "Reducing emissions", "Improving suspension"],
-                    "answer": "Reducing emissions"
-                },
-                {
-                    "question": "Which motorcycle race is known as 'The Isle of Man TT'?",
-                    "options": ["British Superbike Championship", "MotoGP", "World Superbike Championship", "Tourist Trophy"],
-                    "answer": "Tourist Trophy"
-                },
-                {
-                    "question": "What is the meaning of the abbreviation 'ABS' in relation to motorcycles?",
-                    "options": ["Anti-Brake Skid", "Automatic Braking System", "Advanced Bike Suspension", "Anti-Lock Braking System"],
-                    "answer": "Anti-Lock Braking System"
-                },
-                {
-                    "question": "Which motorcycle brand is famous for its off-road bikes, such as the CRF series?",
-                    "options": ["Suzuki", "KTM", "Kawasaki", "Triumph"],
-                    "answer": "Honda"
-                },
-                {
-                    "question": "What is the purpose of a quickshifter in a motorcycle?",
-                    "options": ["To adjust the suspension settings", "To change gears without using the clutch", "To control the throttle response", "To activate the traction control system"],
-                    "answer": "To change gears without using the clutch"
-                },
-                {
-                    "question": "Which motorcycle company produces the 'Ducati Panigale V4' superbike?",
-                    "options": ["Ducati", "Yamaha", "Kawasaki", "Honda"],
-                    "answer": "Ducati"
-                }
-            ]
-        }
-    ]
+// Define variables
+var currentCategoryIndex = 0;
+var currentQuestionIndex = 0;
+var score = 0;
+
+// Get the start button element
+var startButton = document.getElementById('start-btn');
+
+// Get the question container elements
+var questionContainer = document.getElementById('question-container');
+var questionElement = document.getElementById('question');
+var optionsElement = document.getElementById('options');
+
+// Get the submit button and result elements
+var submitButton = document.getElementById('submit-btn');
+var resultElement = document.getElementById('result');
+
+// Add event listener to the start button
+startButton.addEventListener('click', startQuiz);
+
+// Function to start the quiz
+function startQuiz() {
+  // Hide the start button and show the question container
+  startButton.style.display = 'none';
+  questionContainer.style.display = 'block';
+  
+  // Load the first question
+  loadQuestion();
 }
+
+// Function to load a question
+function loadQuestion() {
+  // Get the current category and question
+  var category = categories[currentCategoryIndex];
+  var question = category.questions[currentQuestionIndex];
+  
+  // Set the question and options in the HTML elements
+  questionElement.innerText = question.question;
+  optionsElement.innerHTML = '';
+  
+  // Create and append the option buttons
+  for (var i = 0; i < question.options.length; i++) {
+    var optionButton = document.createElement('button');
+    optionButton.innerText = question.options[i];
+    optionButton.classList.add('option-btn');
+    optionButton.addEventListener('click', selectOption);
+    optionsElement.appendChild(optionButton);
+  }
+}
+
+// Function to handle option selection
+function selectOption(event) {
+  var selectedOption = event.target;
+  var category = categories[currentCategoryIndex];
+  var question = category.questions[currentQuestionIndex];
+  
+  // Check if the selected option is correct
+  if (selectedOption.innerText === question.answer) {
+    score++;
+  }
+  
+  // Disable option buttons to prevent multiple selections
+  var optionButtons = optionsElement.querySelectorAll('.option-btn');
+  for (var i = 0; i < optionButtons.length; i++) {
+    optionButtons[i].disabled = true;
+  }
+  
+  // Show the submit button
+  submitButton.style.display = 'block';
+}
+
+// Add event listener to the submit button
+submitButton.addEventListener('click', submitAnswer);
+
+// Function to submit the answer and load the next question
+function submitAnswer() {
+  // Increment the question index
+  currentQuestionIndex++;
+  
+  // Check if all questions in the current category are answered
+  var category = categories[currentCategoryIndex];
+  if (currentQuestionIndex >= category.questions.length) {
+    // Check if there are more categories
+    if (currentCategoryIndex + 1 < categories.length) {
+      // Move to the next category
+      currentCategoryIndex++;
+      currentQuestionIndex = 0;
+    } else {
+      // End the quiz and display the result
+      endQuiz();
+      return;
+    }
+  }
+  
+  // Load the next question
+  loadQuestion();
+  
+  // Clear the selected option and enable option buttons
+  var optionButtons = optionsElement.querySelectorAll('.option-btn');
+  for (var i = 0; i < optionButtons.length; i++) {
+    optionButtons[i].disabled = false;
+    optionButtons[i].classList.remove('selected');
+  }
+  
+  // Hide the submit button
+  submitButton.style.display = 'none';
+}
+
+// Function to end the quiz and display the result
+function endQuiz() {
+  // Hide the question container
+  questionContainer.style.display = 'none';
+  
+  // Calculate the score percentage
+  var totalQuestions = 0;
+  var totalCorrect = 0;
+  for (var i = 0; i < categories.length; i++) {
+    totalQuestions += categories[i].questions.length;
+    totalCorrect += getCorrectAnswersCount(categories[i]);
+  }
+  var scorePercentage = (score / totalQuestions) * 100;
+  
+  // Display the result
+  resultElement.innerHTML = 'Quiz ended.<br>';
+  resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
+  resultElement.innerHTML += 'Score percentage: ' + scorePercentage.toFixed(2) + '%';
+}
+
+// Function to count the number of correct answers in a category
+function getCorrectAnswersCount(category) {
+  var correctCount = 0;
+  for (var i = 0; i < category.questions.length; i++) {
+    if (category.questions[i].answer === category.questions[i].selectedOption) {
+      correctCount++;
+    }
+  }
+  return correctCount;
+}
+
+// Load the categories from the JSON file
+var categories = [
+  {
+    "name": "Wildlife",
+    "questions": [
+      {
+        "question": "What is the fastest type of shark?",
+        "options": ["Great White", "Hammerhead", "Mako", "Tiger"],
+        "answer": "Mako"
+      },
+      // Add more questions...
+    ]
+  },
+  {
+    "name": "Motorbikes",
+    "questions": [
+      {
+        "question": "What is the top speed of the Kawasaki Ninja H2R?",
+        "options": ["200 km/h", "300 km/h", "400 km/h", "500 km/h"],
+        "answer": "400 km/h"
+      },
+      // Add more questions...
+    ]
+  }
+];
+
