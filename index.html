@@ -4,8 +4,7 @@
     <title>DDB Quiz</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-      content="DDB Quiz">
+    <meta name="description" content="DDB Quiz">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js"></script>
 </head>
@@ -19,6 +18,12 @@
             <p>Test your knowledge of the DDB.</p>
             <p>Click the button below to start the quiz.</p>
             <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+        <div id="question-container" style="display: none;">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <button id="submit-btn" style="display: none;">Submit</button>
+            <div id="result"></div>
         </div>
         <div class="footer">
             <p>Created by Daniel J Maggs</p>
