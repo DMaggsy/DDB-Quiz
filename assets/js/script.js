@@ -138,14 +138,19 @@ document.addEventListener('DOMContentLoaded', function() {
       return correctCount;
     }
   
-    // Load the categories from the JSON file
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        categories = data.categories;
-      })
-      .catch(error => {
-        console.error('Error loading questions from data.json:', error);
-      });
+    // Function to load the categories from the JSON file
+    function loadCategories() {
+      fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          categories = data.categories;
+        })
+        .catch(error => {
+          console.error('Error loading questions from data.json:', error);
+        });
+    }
+  
+    // Call the loadCategories function to start loading the categories
+    loadCategories();
   });
   
