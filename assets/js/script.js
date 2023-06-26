@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Define variables
+    var categories;
     var currentCategoryIndex = 0;
     var currentQuestionIndex = 0;
     var score = 0;
