@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 // Define variables
 var currentCategoryIndex = 0;
 var currentQuestionIndex = 0;
@@ -162,4 +163,4 @@ var categories = [
     ]
   }
 ];
-
+});
