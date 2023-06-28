@@ -30,19 +30,24 @@ document.addEventListener('DOMContentLoaded', function () {
         loadCategories();
     }
 
-    // Function to load the categories from the JSON file
-    function loadCategories() {
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                categories = data.categories;
-                // Load the first question
-                loadQuestion();
-            })
-            .catch(error => {
-                console.error('Error loading questions from data.json:', error);
-            });
-    }
+// Function to load the categories from the JSON file
+function loadCategories() {
+    console.log('Load categories function called');
+
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data loaded:', data);
+
+            categories = data.categories;
+            // Load the first question
+            loadQuestion();
+        })
+        .catch(error => {
+            console.error('Error loading questions from data.json:', error);
+        });
+}
+
 
     // Function to load a question
     function loadQuestion() {
