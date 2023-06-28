@@ -13,6 +13,12 @@ body {
 
 /* Style the container */
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -33,6 +39,7 @@ body {
 .header h1 {
   color: #333333;
   font-size: 24px;
+  margin-bottom: 20%;
 }
 
 /* Style the content */
@@ -64,6 +71,10 @@ button {
 button:hover {
   background-color: #45a049;
   border: #333333;
+}
+.Author {
+  text-align: center;
+  margin-top: 20%;
 }
 
 /* Style the footer */
