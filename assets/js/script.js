@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function loadCategories() {
     console.log('Load categories function called');
 
-    fetch('data.json')
+    fetch('assets/data.json')
         .then(response => response.json())
         .then(data => {
             console.log('Data loaded:', data);
