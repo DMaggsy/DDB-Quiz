@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
         startButton.style.display = 'none';
         questionContainer.style.display = 'block';
 
+        // Clear the intro screen text
+        questionElement.textContent = '';
+        optionsElement.textContent = '';
+
         // Load the categories from the JSON file
         loadCategories();
     }
