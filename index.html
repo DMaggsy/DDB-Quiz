@@ -8,6 +8,9 @@
     <meta name="description" content="DDB Quiz">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -26,10 +29,30 @@
             <button id="submit-btn" style="display: none;">Submit</button>
             <div id="result"></div>
         </div>
+        <div id="end-screen" style="display: none;">
+            <h2>Quiz Ended</h2>
+            <label for="username">Enter your username:</label>
+            <input type="text" id="username-input">
+            <button id="submit-score-btn">Submit Score</button>
+        </div>
         <div class="footer">
             <p class="Author">Created by Daniel J Maggs</p>
         </div>
     </div>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "https://freshquiz-67c82-default-rtdb.firebaseio.com/",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
 
 </html>
