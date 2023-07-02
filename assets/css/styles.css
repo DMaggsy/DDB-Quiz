@@ -25,7 +25,26 @@ body {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: antiquewhite;
+  color: rgb(2, 1, 0);
+}
+
+/* Style the Question H2 */
+h2 {
+  margin: 20px;
+}
+
+.option-btn {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  color: white
+}
+
+.submit-btn {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  color: white
 }
 
 /* Style the header */
@@ -72,6 +91,7 @@ button:hover {
   background-color: #45a049;
   border: #333333;
 }
+
 .Author {
   text-align: center;
   margin-top: 20%;
