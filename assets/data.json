@@ -106,6 +106,60 @@
                     "answer": "Ducati"
                 }
             ]
+        },
+        {
+            "name": "History",
+            "questions": [{
+                    "question": "In which year was the first electric elevator invented?",
+                    "options": ["1852", "1867", "1874", "1880"],
+                    "answer": "1880"
+                },
+                {
+                    "question": "What was the landmass of the British Empire at its peak in 1921?",
+                    "options": ["17 million sq km", "29.9 million sq km", "35.5 million sq km", "38.2 million sq km"],
+                    "answer": "35.5 million sq km"
+                },
+                {
+                    "question": "Which ancient civilization built the Great Wall of China?",
+                    "options": ["Egyptians", "Greeks", "Persians", "Chinese"],
+                    "answer": "Chinese"
+                },
+                {
+                    "question": "What year did the Berlin Wall fall?",
+                    "options": ["1985", "1987", "1989", "1991"],
+                    "answer": "1989"
+                },
+                {
+                    "question": "Who was the first president of the United States?",
+                    "options": ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John F. Kennedy"],
+                    "answer": "George Washington"
+                },
+                {
+                    "question": "Which European city is known as the 'Eternal City'?",
+                    "options": ["Paris", "Athens", "Rome", "Vienna"],
+                    "answer": "Rome"
+                },
+                {
+                    "question": "In which year did World War II end?",
+                    "options": ["1939", "1943", "1945", "1947"],
+                    "answer": "1945"
+                },
+                {
+                    "question": "Who wrote the famous play 'Romeo and Juliet'?",
+                    "options": ["William Shakespeare", "F. Scott Fitzgerald", "Jane Austen", "Mark Twain"],
+                    "answer": "William Shakespeare"
+                },
+                {
+                    "question": "Which country was the first to send a human to space?",
+                    "options": ["United States", "Russia", "China", "Germany"],
+                    "answer": "Russia"
+                },
+                {
+                    "question": "Which famous scientist developed the theory of relativity?",
+                    "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+                    "answer": "Albert Einstein"
+                }
+            ]
         }
     ]
 }
