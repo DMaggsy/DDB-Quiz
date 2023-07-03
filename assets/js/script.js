@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the end screen
     endScreen.style.display = 'block';
 
-    // Hide the submit score button
-    submitScoreButton.style.display = 'none';
+    // Show the submit score button
+    submitScoreButton.style.display = 'block';
 
     // Display the result
     resultElement.innerHTML = 'Quiz ended.<br>';
