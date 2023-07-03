@@ -1,5 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
+// Include the Firebase SDK using the script tag
+document.write('<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>');
+document.write('<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>');
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAEQRrArNsKOYMjeAVpYAWmaoK1e5HRYM0",
@@ -14,4 +16,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-export default firebase;
