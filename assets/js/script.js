@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         correctCount++;
       }
     }
-    return correctCount;
+    
   }
 
   // Function to calculate the total number of questions in all categories
