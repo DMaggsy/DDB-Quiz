@@ -78,26 +78,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   
-    // Function to handle option selection
-    function selectOption(event) {
-      var selectedOption = event.target;
-      var category = categories[currentCategoryIndex];
-      var question = category.questions[currentQuestionIndex];
-  
-      // Check if the selected option is correct
-      if (selectedOption.innerText === question.answer) {
-        score++;
-      }
-  
-      // Disable option buttons to prevent multiple selections
-      var optionButtons = optionsElement.querySelectorAll('.option-btn');
-      for (var i = 0; i < optionButtons.length; i++) {
-        optionButtons[i].disabled = true;
-      }
-  
-      // Show the submit button
-      submitButton.style.display = 'block';
-    }
+// Function to handle option selection
+function selectOption(event) {
+  var selectedOption = event.target;
+  var category = categories[currentCategoryIndex];
+  var question = category.questions[currentQuestionIndex];
+
+  // Remove the "selected" class from all option buttons
+  var optionButtons = optionsElement.querySelectorAll('.option-btn');
+  optionButtons.forEach(function (button) {
+    button.classList.remove('selected');
+  });
+
+  // Add the "selected" class to the clicked option button
+  selectedOption.classList.add('selected');
+
+  // Show the submit button
+  submitButton.style.display = 'block';
+}
+
   
     // Add event listener to the submit button
     submitButton.addEventListener('click', submitAnswer);

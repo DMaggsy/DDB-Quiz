@@ -34,12 +34,12 @@ h2 {
 }
 
 #options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
   margin: 20px;
-  color: white
 }
+
 .option-btn {
   display: flex;
   flex-direction: column;
@@ -47,14 +47,20 @@ h2 {
   margin: 20px;
   color: white
 }
+.option-btn.selected {
+  background-color: yellow;
+  border: #333333;
+  color: black;
+}
 
 #submit-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
-  color: white
+  margin: 20px auto;
+  color: white;
 }
+
 #submit-btn:hover {
   background-color: yellow;
   border: #333333;
