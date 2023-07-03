@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DDB Quiz">
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+      <!-- Include Firebase JavaScript SDK -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+     <!-- Include the Firebase configuration -->
+     <script src="assets/js/firebase.js"></script>
+
+     <!-- Include the main JavaScript file -->
+     <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -27,7 +37,7 @@
         </div>
         <div id="end-screen" style="display: none;">
             <h2>Quiz Ended</h2>
-            <label for="username">Enter your username:</label>
+            <label for="username-input">Enter your username:</label>
             <input type="text" id="username-input">
             <button id="submit-score-btn">Submit Score</button>
         </div>
@@ -35,9 +45,6 @@
             <p class="Author">Created by Daniel J Maggs</p>
         </div>
     </div>
-
-    <script src="assets/js/firebase-config.js"></script>
-    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
