@@ -155,16 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var username = usernameInput.value;
     var scorePercentage = (score / totalQuestions) * 100;
 
-    // Create a new entry in the Firebase Realtime Database
-    var database = firebase.database();
-    var scoresRef = database.ref('quiz-scores');
-    scoresRef.push({
-      username: username,
-      score: score,
-      totalQuestions: totalQuestions,
-      scorePercentage: scorePercentage.toFixed(2)
-    });
-
     // Display the result
     resultElement.innerHTML += 'Username: ' + username;
 

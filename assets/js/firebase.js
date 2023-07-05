@@ -1,8 +1,3 @@
-// Include the Firebase SDK using the script tag
-document.write('<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>');
-document.write('<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>');
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyAEQRrArNsKOYMjeAVpYAWmaoK1e5HRYM0",
   authDomain: "freshquiz-67c82.firebaseapp.com",
@@ -16,3 +11,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Function to submit the answer and load the next question
+function submitAnswer() {
+  // ...
+
+  // Create a new entry in the Firebase Realtime Database
+  var database = firebase.database();
+  var scoresRef = database.ref('quiz-scores');
+  scoresRef.push({
+    username: usernameInput.value,
+    score: score,
+    totalQuestions: totalQuestions,
+    scorePercentage: scorePercentage.toFixed(2)
+  });
+
+  // ...
+}
