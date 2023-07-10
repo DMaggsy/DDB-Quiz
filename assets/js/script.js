@@ -184,7 +184,32 @@ document.addEventListener('DOMContentLoaded', function () {
     resultElement.innerHTML = 'Quiz ended.<br>';
     resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
   }
+// Function to update the results element with the username and score
+function updateResults(score) {
+  var resultsElement = document.getElementById('results');
+  resultsElement.innerHTML = `
+    <h1>Your results</h1>
+    <p>Username: <strong>${usernameInput.value}</strong></p>
+    <p>Score: <strong>${score}</strong></p>
+  `;
+}
 
+// Event listener for the submit score button
+submitScoreButton.addEventListener('click', submitScore);
+
+function submitScore() {
+  var username = usernameInput.value;
+  var scorePercentage = (score / totalQuestions) * 100;
+
+  // Display the result
+  resultElement.innerHTML += 'Username: ' + username;
+
+  // Clear the username input
+  usernameInput.value = '';
+}
+
+// Event listener for the submit score button
+submitScoreButton.addEventListener('click', submitScore);
   submitScoreButton.addEventListener('click', function () {
     var username = usernameInput.value;
     var scorePercentage = (score / totalQuestions) * 100;
@@ -214,15 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return totalQuestionsCount;
   }
-  // Update the results element with the username and score
-function updateResults() {
-  var resultsElement = document.getElementById('results');
-  resultsElement.innerHTML = `
-    <h1>Your results</h1>
-    <p>Username: <strong>${usernameInput.value}</strong></p>
-    <p>Score: <strong>${score}</strong></p>
-  `;
-}
 
 // Submit the username and score to the Firebase Realtime Database
 function submitScore() {
@@ -239,8 +255,13 @@ function submitScore() {
   });
 
   // Update the results element with the username and score
-  updateResults();
+  updateResults(score);
+
+  // Clear the username and score inputs
+  usernameInput.value = '';
+  scoreInput.value = '';
 }
+
 
 // Event listener for the submit score button
 submitScoreButton.addEventListener('click', submitScore);
