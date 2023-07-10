@@ -241,6 +241,27 @@ function updateResults(score) {
   `;
 }
 
+// Function to end the quiz and display the result
+function endQuiz() {
+  // Hide the question container
+  questionContainer.style.display = 'none';
+
+  // Show the end screen
+  endScreen.style.display = 'block';
+
+  // Show the submit score button
+  submitScoreButton.style.display = 'block';
+
+  // Call the updateResults function
+  updateResults(score);
+
+  // Display the result
+  resultElement.innerHTML = 'Quiz ended.<br>';
+  resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
+}
+
+
+
 // Event listener for the submit score button
 submitScoreButton.addEventListener('click', function () {
   var username = usernameInput.value;
