@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   }
-
   // Function to calculate the total number of questions in all categories
   function getTotalQuestionsCount() {
     var totalQuestionsCount = 0;
@@ -215,4 +214,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return totalQuestionsCount;
   }
+  // Update the results element with the username and score
+function updateResults() {
+  var resultsElement = document.getElementById('results');
+  resultsElement.innerHTML = `
+    <h1>Your results</h1>
+    <p>Username: <strong>${usernameInput.value}</strong></p>
+    <p>Score: <strong>${score}</strong></p>
+  `;
+}
+
+// Submit the username and score to the Firebase Realtime Database
+function submitScore() {
+  // Get the username and score from the user input
+  var username = usernameInput.value;
+  var score = scoreInput.value;
+
+  // Create a new entry in the Firebase Realtime Database
+  var database = firebase.database();
+  var scoresRef = database.ref('quiz-scores');
+  scoresRef.push({
+    username: username,
+    score: score
+  });
+
+  // Update the results element with the username and score
+  updateResults();
+}
+
+// Event listener for the submit score button
+submitScoreButton.addEventListener('click', submitScore);
+
 });
