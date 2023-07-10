@@ -184,15 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
     resultElement.innerHTML = 'Quiz ended.<br>';
     resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
   }
-// Function to update the results element with the username and score
-function updateResults(score) {
-  var resultsElement = document.getElementById('results');
-  resultsElement.innerHTML = `
-    <h1>Your results</h1>
-    <p>Username: <strong>${usernameInput.value}</strong></p>
-    <p>Score: <strong>${score}</strong></p>
-  `;
-}
 
 // Event listener for the submit score button
 submitScoreButton.addEventListener('click', submitScore);
@@ -240,11 +231,33 @@ submitScoreButton.addEventListener('click', submitScore);
     return totalQuestionsCount;
   }
 
+// Function to update the results element with the username and score
+function updateResults(score) {
+  var resultsElement = document.getElementById('results');
+  resultsElement.innerHTML = `
+    <h1>Your results</h1>
+    <p>Username: <strong>${usernameInput.value}</strong></p>
+    <p>Score: <strong>${score}</strong></p>
+  `;
+}
+
+// Event listener for the submit score button
+submitScoreButton.addEventListener('click', function () {
+  var username = usernameInput.value;
+  var scorePercentage = (score / totalQuestions) * 100;
+
+  // Display the result
+  resultElement.innerHTML += 'Username: ' + username;
+
+  // Clear the username input
+  usernameInput.value = '';
+});
+
 // Submit the username and score to the Firebase Realtime Database
 function submitScore() {
   // Get the username and score from the user input
   var username = usernameInput.value;
-  var score = scoreInput.value;
+  var score = scoreInput; // <-- Comment out this line
 
   // Create a new entry in the Firebase Realtime Database
   var database = firebase.database();
@@ -261,6 +274,7 @@ function submitScore() {
   usernameInput.value = '';
   scoreInput.value = '';
 }
+
 
 
 // Event listener for the submit score button
