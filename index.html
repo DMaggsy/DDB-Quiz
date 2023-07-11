@@ -29,66 +29,58 @@
             <button id="submit-btn" style="display: none;">Submit</button>
             <div id="result">
         </div>
-            <input type="text" id="username-input" placeholder="Your username">
-            <input type="text" id="score-input" style="display: none;">
-            <button type="button" id="submit-score" onclick="submitScore(scoreInput)">Submit score</button>
-            
-            <script>
-            // Function to update the results element with the username and score
-            function updateResults(score) {
-              var resultsElement = document.getElementById('results');
-              resultsElement.innerHTML = `
-                <h1>Your results</h1>
-                <p>Username: <strong>${usernameInput.value}</strong></p>
-                <p>Score: <strong>${score}</strong></p>
-              `;
-            }
-            
-            // Function to submit the score
-            function submitScore(scoreInput) {
-              // Get the username and score from the user input
-              var username = usernameInput.value;
-              var score = scoreInput.value;
-            
-              // Only call the updateResults function if the quiz is over
-              if (quizIsOver()) {
-                updateResults(score);
-              }
-            
-              // Clear the username and score inputs
-              usernameInput.value = '';
-              scoreInput.value = '';
-            }
-            
-            // Function to check if the quiz is over
-            function quizIsOver() {
-              // The quiz is over if all of the questions have been answered
-              return questionsAnswered === totalQuestions;
-            }
-            
-            // Event listener for the DOMContentLoaded event
-            document.addEventListener('DOMContentLoaded', function () {
-              // Initialize the scoreInput variable
-              var scoreInput = document.getElementById('score-input');
-            
-              // Hide the scoreInput element
-              scoreInput.style.display = 'none';
-            
-              // Event listener for the submit event of the question-container element
-              document.getElementById('question-container').addEventListener('submit', function () {
-                // Check if the quiz is over
-                if (quizIsOver()) {
-                  // Hide the username and score input elements
-                  usernameInput.style.display = 'none';
-                  scoreInput.style.display = 'none';
-                }
-              });
-            });
-            </script>
-            
+        <input type="text" id="username-input" placeholder="Your username">
+        <input type="hidden" id="score-input" value="0">
+        <button type="button" id="submit-score" onclick="submitScore()">Submit score</button>
         
-
+        <script>
+        // Function to update the results element with the username and score
+        function updateResults(score) {
+          var resultsElement = document.getElementById('results');
+          resultsElement.innerHTML = `
+            <h1>Your results</h1>
+            <p>Username: <strong>${usernameInput.value}</strong></p>
+            <p>Score: <strong>${score}</strong></p>
+          `;
+        }
         
+        // Function to submit the score
+        function submitScore() {
+          // Get the username from the user input
+          var username = usernameInput.value;
+        
+          // Get the score from the hidden input
+          var score = document.getElementById('score-input').value;
+        
+          // Update the results
+          updateResults(score);
+        
+          // Clear the username and score inputs
+          usernameInput.value = '';
+          scoreInput.value = '';
+        }
+        
+        // Event listener for the DOMContentLoaded event
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialize the scoreInput variable
+          var scoreInput = document.getElementById('score-input');
+        
+          // Hide the scoreInput element
+          scoreInput.style.display = 'none';
+        
+          // Event listener for the submit event of the question-container element
+          document.getElementById('question-container').addEventListener('submit', function () {
+            // Set the score to 0
+            scoreInput.value = 0;
+        
+            // Show the username and score input elements
+            scoreInput.style.display = 'block';
+          });
+        });
+        </script>
+        
+        
+    
         </body>
         </html>
           
