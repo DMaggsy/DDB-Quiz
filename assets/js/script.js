@@ -241,6 +241,22 @@ function updateResults(score) {
   `;
 }
 
+// Event listener for the DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize the result element
+  var resultElement = document.getElementById('results');
+  var scoreInput = document.getElementById('score-input');
+
+  // Hide the question container
+  questionContainer.style.display = 'none';
+
+  // Show the end screen
+  endScreen.style.display = 'none';
+
+  // Show the submit score button
+  submitScoreButton.style.display = 'none';
+});
+
 // Function to end the quiz and display the result
 function endQuiz() {
   // Hide the question container
@@ -259,6 +275,8 @@ function endQuiz() {
   resultElement.innerHTML = 'Quiz ended.<br>';
   resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
 }
+
+
 
 
 
