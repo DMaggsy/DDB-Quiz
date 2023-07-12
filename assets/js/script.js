@@ -1,3 +1,4 @@
+var usernameInput = document.getElementById('username-input');
 document.addEventListener('DOMContentLoaded', function () {
   // Define variables
   var categories;
@@ -54,24 +55,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Get the end screen elements
   var endScreen = document.getElementById('end-screen');
-  var usernameInput = document.getElementById('username-input');
   var submitScoreButton = document.getElementById('submit-score-btn');
+
+  // Function to handle the "Enter username" button click event
+function enterUsername() {
+  var username = usernameInput.value;
+
+  // Save the username in a variable or pass it to the Firebase Realtime Database
+
+  // Hide the "Enter username" button
+  enterUsernameButton.style.display = 'none';
+
+  // Show the "Start quiz" button
+  startButton.style.display = 'block';
+}
 
   // Add event listener to the start button
   startButton.addEventListener('click', startQuiz);
 
-  // Function to start the quiz
-  function startQuiz() {
-    // Hide the start button and show the question container
-    startButton.style.display = 'none';
-    document.querySelector('.content').style.display = 'none';
+// Function to start the quiz
+function startQuiz() {
+  // Hide the start button and show the question container
+  startButton.style.display = 'none';
+  document.querySelector('.content').style.display = 'none';
 
-    // Show the question container
-    questionContainer.style.display = 'block';
+  // Show the question container
+  questionContainer.style.display = 'block';
 
-    // Load the categories from the JSON file
-    loadCategories();
-  }
+  // Change the text of the submit score button
+  submitScoreButton.textContent = 'Submit score';
+
+  // Load the categories from the JSON file
+  loadCategories();
+}
+
 
   // Function to load the categories from the JSON file
   function loadCategories() {
@@ -185,9 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
     resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
   }
 
-// Event listener for the submit score button
-submitScoreButton.addEventListener('click', submitScore);
-
 function submitScore() {
   var username = usernameInput.value;
   var scorePercentage = (score / totalQuestions) * 100;
@@ -200,17 +214,17 @@ function submitScore() {
 }
 
 // Event listener for the submit score button
-submitScoreButton.addEventListener('click', submitScore);
-  submitScoreButton.addEventListener('click', function () {
-    var username = usernameInput.value;
-    var scorePercentage = (score / totalQuestions) * 100;
+submitScoreButton.addEventListener('click', function () {
+  var username = usernameInput.value;
+  var scorePercentage = (score / totalQuestions) * 100;
 
-    // Display the result
-    resultElement.innerHTML += 'Username: ' + username;
+  // Display the result
+  resultElement.innerHTML += 'Username: ' + username;
 
-    // Clear the username input
-    usernameInput.value = '';
-  });
+  // Clear the username input
+  usernameInput.value = '';
+});
+
 
   // Function to count the number of correct answers in a category
   function getCorrectAnswersCount(category) {
@@ -296,7 +310,7 @@ submitScoreButton.addEventListener('click', function () {
 function submitScore() {
   // Get the username and score from the user input
   var username = usernameInput.value;
-  var score = scoreInput; // <-- Comment out this line
+  var score = score; // <-- Comment out this line
 
   // Create a new entry in the Firebase Realtime Database
   var database = firebase.database();
@@ -313,10 +327,5 @@ function submitScore() {
   usernameInput.value = '';
   scoreInput.value = '';
 }
-
-
-
-// Event listener for the submit score button
-submitScoreButton.addEventListener('click', submitScore);
 
 });

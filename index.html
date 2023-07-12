@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DDB Quiz">
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="assets/js/script.js"></script>    
 </head>
 <body>
     <div class="container">
@@ -15,10 +15,11 @@
             <h1>The Fresh Quiz</h1>
         </div>
         <div class="content">
-            <p>Test your knowledge amongst 4 main categories.</p>
-            <p>Enter your username and press submit to start the quiz.</p>
+            <p>Test your knowledge against the fresh quiz & other players.</p>
+            <p>Choose your username and press Enter to start the quiz.</p>
             <input type="text" id="username-input" placeholder="Your username">
-            <button type="button" id="submit-score" onclick="submitScore()">Submit score</button>
+            <button type="button" id="enter-username" onclick="enterUsername()">Enter username</button>
+ 
         </div>
         <div id="question-container" style="display: none;">
             <h2 id="question"></h2>
