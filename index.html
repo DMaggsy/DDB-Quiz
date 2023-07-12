@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Maggy's Quiz</title>
     <meta charset="utf-8" />
@@ -9,10 +8,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
-
 </head>
-
-
 <body>
     <div class="container">
         <div class="header">
@@ -20,74 +16,84 @@
         </div>
         <div class="content">
             <p>Test your knowledge amongst 4 main categories.</p>
-            <p>Click the button below to start the quiz.</p>
-            <button id="start-btn">Start Quiz</button>
+            <p>Enter your username and press submit to start the quiz.</p>
+            <input type="text" id="username-input" placeholder="Your username">
+            <button type="button" id="submit-score" onclick="submitScore()">Submit score</button>
         </div>
         <div id="question-container" style="display: none;">
             <h2 id="question"></h2>
             <div id="options"></div>
             <button id="submit-btn" style="display: none;">Submit</button>
-            <div id="result">
+            <div id="result"></div>
         </div>
-        <input type="text" id="username-input" placeholder="Your username">
-        <input type="hidden" id="score-input" value="0">
-        <button type="button" id="submit-score" onclick="submitScore()">Submit score</button>
         
         <script>
         // Function to update the results element with the username and score
         function updateResults(score) {
-          var resultsElement = document.getElementById('results');
+          var resultsElement = document.getElementById('result');
           resultsElement.innerHTML = `
             <h1>Your results</h1>
             <p>Username: <strong>${usernameInput.value}</strong></p>
             <p>Score: <strong>${score}</strong></p>
           `;
         }
-        
+
         // Function to submit the score
         function submitScore() {
           // Get the username from the user input
           var username = usernameInput.value;
-        
+
           // Get the score from the hidden input
           var score = document.getElementById('score-input').value;
-        
+
           // Update the results
           updateResults(score);
-        
+
           // Clear the username and score inputs
           usernameInput.value = '';
           scoreInput.value = '';
+
+          // Show the question container
+          questionContainer.style.display = 'block';
         }
-        
+
         // Event listener for the DOMContentLoaded event
         document.addEventListener('DOMContentLoaded', function () {
           // Initialize the scoreInput variable
           var scoreInput = document.getElementById('score-input');
-        
-          // Hide the scoreInput element
-          scoreInput.style.display = 'none';
-        
-          // Event listener for the submit event of the question-container element
-          document.getElementById('question-container').addEventListener('submit', function () {
-            // Set the score to 0
-            scoreInput.value = 0;
-        
-            // Show the username and score input elements
-            scoreInput.style.display = 'block';
+
+          // Hide the question container
+          var questionContainer = document.getElementById('question-container');
+          questionContainer.style.display = 'none';
+
+          // Get the start button element
+          var startButton = document.getElementById('start-btn');
+
+          // Event listener for the start button click
+          startButton.addEventListener('click', function () {
+            // Hide the start button
+            startButton.style.display = 'none';
+
+            // Show the question container
+            questionContainer.style.display = 'block';
+
+            // Get the username input value
+            var username = usernameInput.value;
+            console.log('Username:', username);
+          });
+
+          // Event listener for the submit score button
+          var submitScoreButton = document.getElementById('submit-score');
+          submitScoreButton.addEventListener('click', function () {
+            // Hide the submit score button
+            submitScoreButton.style.display = 'none';
+
+            // Get the username input value
+            var username = usernameInput.value;
+            console.log('Username:', username);
           });
         });
         </script>
-        
-        
-    
-        </body>
-        </html>
-          
-        <div class="footer">
-            <p class="Author">Created by Daniel J Maggs</p>
-        </div>
     </div>
 </body>
-
 </html>
