@@ -1,12 +1,116 @@
-var usernameInput = document.getElementById('username-input');
 document.addEventListener('DOMContentLoaded', function () {
   // Define variables
+  var usernameInput = document.getElementById('username-input');
   var categories;
   var currentCategoryIndex = 0;
   var currentQuestionIndex = 0;
   var score = 0;
   var totalQuestions = 0;
 
+  // Function to handle the "Enter username" button click event
+  function enterUsername() {
+    var username = usernameInput.value;
+
+    // Hide the "Enter username" button
+    document.getElementById('enter-username').style.display = 'none';
+
+    // Hide the username input
+    document.getElementById('username-input').style.display = 'none';
+
+    // Show the "Start quiz" button
+    document.getElementById('start-quiz').style.display = 'block';
+  }
+
+  // Function to start the quiz
+  function startQuiz() {
+    // Hide the "Start quiz" button
+    document.getElementById('start-quiz').style.display = 'none';
+
+    // Show the question container
+    document.getElementById('question-container').style.display = 'block';
+
+    // Load the categories from the JSON file
+    loadCategories();
+  }
+
+  // Add event listener to the "Enter username" button
+  var enterUsernameButton = document.getElementById('enter-username');
+  enterUsernameButton.addEventListener('click', enterUsername);
+
+  // Function to load the categories from the JSON file
+  function loadCategories() {
+    fetch('assets/data.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Data loaded:', data);
+
+        categories = data.categories;
+        totalQuestions = getTotalQuestionsCount();
+        // Load the first question
+        loadQuestion();
+      })
+      .catch(error => {
+        console.error('Error loading questions from data.json:', error);
+      });
+  }
+
+  // Function to load a question
+  function loadQuestion() {
+    var category = categories[currentCategoryIndex];
+    var question = category.questions[currentQuestionIndex];
+
+    // Set the question and options in the HTML elements
+    questionElement.innerText = question.question;
+    optionsElement.innerHTML = '';
+
+    // Create and append the option buttons
+    for (var i = 0; i < question.options.length; i++) {
+      var optionButton = document.createElement('button');
+      optionButton.innerText = question.options[i];
+      optionButton.classList.add('option-btn');
+      optionButton.addEventListener('click', selectOption);
+      optionsElement.appendChild(optionButton);
+    }
+  }
+  // Function to handle option selection
+  function selectOption(event) {
+    var selectedOption = event.target;
+    var category = categories[currentCategoryIndex];
+    var question = category.questions[currentQuestionIndex];
+
+    // Remove the "selected" class from all option buttons
+    var optionButtons = optionsElement.querySelectorAll('.option-btn');
+    optionButtons.forEach(function (button) {
+      button.classList.remove('selected');
+    });
+
+    // Add the "selected" class to the clicked option button
+    selectedOption.classList.add('selected');
+
+    // Show the submit button
+    submitButton.style.display = 'block';
+  }
+    // Function to submit the answer and load the next question
+    function submitAnswer() {
+      // Increment the question index
+      currentQuestionIndex++;
+  
+      // Check if all questions in the current category are answered
+      var category = categories[currentCategoryIndex];
+      if (currentQuestionIndex >= category.questions.length) {
+        // Check if there are more categories
+        if (currentCategoryIndex + 1 < categories.length) {
+          // Move to the next category
+          currentCategoryIndex++;
+          currentQuestionIndex = 0;
+        } else {
+          // End the quiz and display the result
+          endQuiz();
+          return;
+        }
+      }
+
+      
   const firebaseConfig = {
     apiKey: "AIzaSyAEQRrArNsKOYMjeAVpYAWmaoK1e5HRYM0",
     authDomain: "freshquiz-67c82.firebaseapp.com",
@@ -57,31 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var endScreen = document.getElementById('end-screen');
   var submitScoreButton = document.getElementById('submit-score-btn');
 
- // Function to handle the "Enter username" button click event
-function enterUsername() {
-  var username = document.getElementById('username-input').value;
-  
-  // Save the username in a variable or pass it to the Firebase Realtime Database
-  
-  // Hide the "Enter username" button
-  document.getElementById('enter-username').style.display = 'none';
-
-  // Show the "Start quiz" button
-  document.getElementById('start-quiz').style.display = 'block';
-}
-
-// Function to start the quiz
-function startQuiz() {
-  // Hide the "Start quiz" button
-  document.getElementById('start-quiz').style.display = 'none';
-
-  // Show the question container
-  document.getElementById('question-container').style.display = 'block';
-
-  // Load the categories from the JSON file
-  loadCategories();
-}
-
 
   // Function to load the categories from the JSON file
   function loadCategories() {
@@ -102,68 +181,8 @@ function startQuiz() {
       });
   }
 
-  // Function to load a question
-  function loadQuestion() {
-    // Get the current category and question
-    var category = categories[currentCategoryIndex];
-    var question = category.questions[currentQuestionIndex];
-
-    // Set the question and options in the HTML elements
-    questionElement.innerText = question.question;
-    optionsElement.innerHTML = '';
-
-    // Create and append the option buttons
-    for (var i = 0; i < question.options.length; i++) {
-      var optionButton = document.createElement('button');
-      optionButton.innerText = question.options[i];
-      optionButton.classList.add('option-btn');
-      optionButton.addEventListener('click', selectOption);
-      optionsElement.appendChild(optionButton);
-    }
-  }
-
-  // Function to handle option selection
-  function selectOption(event) {
-    var selectedOption = event.target;
-    var category = categories[currentCategoryIndex];
-    var question = category.questions[currentQuestionIndex];
-
-    // Remove the "selected" class from all option buttons
-    var optionButtons = optionsElement.querySelectorAll('.option-btn');
-    optionButtons.forEach(function (button) {
-      button.classList.remove('selected');
-    });
-
-    // Add the "selected" class to the clicked option button
-    selectedOption.classList.add('selected');
-
-    // Show the submit button
-    submitButton.style.display = 'block';
-  }
-
-
   // Add event listener to the submit button
   submitButton.addEventListener('click', submitAnswer);
-
-  // Function to submit the answer and load the next question
-  function submitAnswer() {
-    // Increment the question index
-    currentQuestionIndex++;
-
-    // Check if all questions in the current category are answered
-    var category = categories[currentCategoryIndex];
-    if (currentQuestionIndex >= category.questions.length) {
-      // Check if there are more categories
-      if (currentCategoryIndex + 1 < categories.length) {
-        // Move to the next category
-        currentCategoryIndex++;
-        currentQuestionIndex = 0;
-      } else {
-        // End the quiz and display the result
-        endQuiz();
-        return;
-      }
-    }
 
     // Load the next question
     loadQuestion();
