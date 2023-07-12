@@ -57,33 +57,26 @@ document.addEventListener('DOMContentLoaded', function () {
   var endScreen = document.getElementById('end-screen');
   var submitScoreButton = document.getElementById('submit-score-btn');
 
-  // Function to handle the "Enter username" button click event
+ // Function to handle the "Enter username" button click event
 function enterUsername() {
-  var username = usernameInput.value;
-
+  var username = document.getElementById('username-input').value;
+  
   // Save the username in a variable or pass it to the Firebase Realtime Database
-
+  
   // Hide the "Enter username" button
-  enterUsernameButton.style.display = 'none';
+  document.getElementById('enter-username').style.display = 'none';
 
   // Show the "Start quiz" button
-  startButton.style.display = 'block';
+  document.getElementById('start-quiz').style.display = 'block';
 }
-
-  // Add event listener to the start button
-  startButton.addEventListener('click', startQuiz);
 
 // Function to start the quiz
 function startQuiz() {
-  // Hide the start button and show the question container
-  startButton.style.display = 'none';
-  document.querySelector('.content').style.display = 'none';
+  // Hide the "Start quiz" button
+  document.getElementById('start-quiz').style.display = 'none';
 
   // Show the question container
-  questionContainer.style.display = 'block';
-
-  // Change the text of the submit score button
-  submitScoreButton.textContent = 'Submit score';
+  document.getElementById('question-container').style.display = 'block';
 
   // Load the categories from the JSON file
   loadCategories();
