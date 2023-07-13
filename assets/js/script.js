@@ -32,14 +32,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load the categories from the JSON file
     loadCategories();
   }
+  // Get the start text element
+  var startText = document.getElementById('start-text');
 
   // Add event listener to the "Enter username" button
   var enterUsernameButton = document.getElementById('enter-username');
   enterUsernameButton.addEventListener('click', enterUsername);
 
-  // Add event listener to the "Start quiz" button
+  // Add this code before attaching the event listener
   var startQuizButton = document.getElementById('start-quiz');
-  startQuizButton.addEventListener('click', startQuiz);
+
+  // Add event listener to the "Start quiz" button
+  startQuizButton.addEventListener('click', function () {
+    console.log('Start quiz button clicked');
+
+    // Hide the start quiz button
+    startQuizButton.style.display = 'none';
+
+    // Show the question container
+    questionContainer.style.display = 'block';
+
+    // Get the username input value
+    var username = usernameInput.value;
+    console.log('Username:', username);
+
+    // Hide the start text
+    startText.style.display = 'none';
+
+    // Load the categories from the JSON file
+    loadCategories();
+  });
+
+
+
 
   // Function to load the categories from the JSON file
   function loadCategories() {
@@ -52,6 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         categories = data.categories;
         totalQuestions = getTotalQuestionsCount();
+        // Hide the start text
+        startText.style.display = 'none';
+
+        // Show the question container
+        questionContainer.style.display = 'block';
         // Load the first question
         loadQuestion();
       })
@@ -113,16 +143,17 @@ document.addEventListener('DOMContentLoaded', function () {
     selectedOption.classList.add('selected');
 
   }
+
   function submitAnswer() {
     // Check if an option is selected
     var selectedOption = optionsElement.querySelector('.selected');
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
-  
+
     // Increment the question index
     currentQuestionIndex++;
-  
+
     // Check if all questions in the current category are answered
     var category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {
@@ -194,18 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
       <p>Score: <strong>${score}</strong></p>
     `;
   }
-
-  // Event listener for the submit score button
-  submitScoreButton.addEventListener('click', function () {
-    var username = usernameInput.value;
-    var scorePercentage = (score / totalQuestions) * 100;
-
-    // Display the result
-    resultElement.innerHTML += 'Username: ' + username;
-
-    // Clear the username input
-    usernameInput.value = '';
-  });
 
   // Submit the username and score to the Firebase Realtime Database
   function submitScore() {
