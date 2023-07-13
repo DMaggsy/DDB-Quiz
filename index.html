@@ -25,12 +25,12 @@
         <div id="question-container" style="display: none;">
             <h2 id="question"></h2>
             <div id="options"></div>
-            <button id="submit-btn" style="display: none;">Submit</button>
+            <button id="submit-btn">Submit</button>
             <div id="result"></div>
         </div>
         <div id="end-screen" style="display: none;">
           <div id="results"></div>
-          <button id="submit-score-btn" style="display: none;">Submit Score</button>
+          <button id="submit-score" style="display: none;">Submit Score</button>
         </div>
         
         <script>
@@ -73,7 +73,7 @@
           questionContainer.style.display = 'none';
 
           // Get the start button element
-          var startButton = document.getElementById('start-btn');
+          var startButton = document.getElementById('start-quiz');
 
           // Event listener for the start button click
           startButton.addEventListener('click', function () {

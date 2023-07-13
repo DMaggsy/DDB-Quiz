@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var usernameInput = document.getElementById('username-input');
   // Define variables
+  var usernameInput = document.getElementById('username-input');
   var categories;
   var currentCategoryIndex = 0;
   var currentQuestionIndex = 0;
@@ -90,15 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Function to load a question
   function loadQuestion() {
     var category = categories[currentCategoryIndex];
     var question = category.questions[currentQuestionIndex];
-
+  
     // Set the question and options in the HTML elements
     questionElement.innerText = question.question;
     optionsElement.innerHTML = '';
-
+  
     // Create and append the option buttons
     for (var i = 0; i < question.options.length; i++) {
       var optionButton = document.createElement('button');
@@ -107,7 +106,35 @@ document.addEventListener('DOMContentLoaded', function () {
       optionButton.addEventListener('click', selectOption);
       optionsElement.appendChild(optionButton);
     }
+  
+    // Get the result element
+    var resultElement = document.createElement('div');
+  
+    // Show the result element
+    resultElement.style.display = 'none';
+  
+    // Call the endQuiz() function if the quiz is over
+    if (currentQuestionIndex >= totalQuestions) {
+      endQuiz(resultElement);
+      return;
+    }
+  
+    // Return the result element
+    return resultElement;
   }
+
+// Function to end the quiz
+function endQuiz(resultElement) {
+  // Calculate the score
+  var score = currentQuestionIndex * 100 / totalQuestions;
+
+  // Set the score in the result element
+  resultElement.innerText = `Your score: ${score}%`;
+
+  // Show the result element
+  resultElement.style.display = 'block';
+}
+  
 
   // Get the question container elements
   var questionContainer = document.getElementById('question-container');
@@ -150,10 +177,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
-
+  
     // Increment the question index
     currentQuestionIndex++;
-
+  
     // Check if all questions in the current category are answered
     var category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {
@@ -180,21 +207,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Function to end the quiz and display the result
-  function endQuiz() {
-    // Hide the question container
-    questionContainer.style.display = 'none';
+// Function to end the quiz and display the result
+function endQuiz() {
+  // Get the end screen element
+  var endScreen = document.getElementById('end-screen');
 
-    // Show the end screen
-    endScreen.style.display = 'block';
+  // Hide the question container
+  questionContainer.style.display = 'none';
 
-    // Show the submit score button
-    submitScoreButton.style.display = 'block';
+  // Show the end screen
+  endScreen.style.display = 'block';
 
-    // Display the result
-    resultElement.innerHTML = 'Quiz ended.<br>';
-    resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
-  }
+  // Show the submit score button
+  var submitScoreButton = document.getElementById('submit-score-btn');
+  submitScoreButton.style.display = 'block';
+
+  // Display the result
+  var resultElement = document.getElementById('results');
+  resultElement.innerHTML = 'Quiz ended.<br>';
+  resultElement.innerHTML += 'Your score: ' + score + '/' + totalQuestions + '<br>';
+}
+
 
   // Function to count the number of correct answers in a category
   function getCorrectAnswersCount(category) {
