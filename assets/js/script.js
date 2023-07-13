@@ -113,11 +113,16 @@ document.addEventListener('DOMContentLoaded', function () {
     selectedOption.classList.add('selected');
 
   }
-  // Function to submit the answer and load the next question
   function submitAnswer() {
+    // Check if an option is selected
+    var selectedOption = optionsElement.querySelector('.selected');
+    if (!selectedOption) {
+      return; // Exit the function if no option is selected
+    }
+  
     // Increment the question index
     currentQuestionIndex++;
-
+  
     // Check if all questions in the current category are answered
     var category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {

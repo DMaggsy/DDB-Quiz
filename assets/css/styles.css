@@ -32,6 +32,25 @@ body {
 h2 {
   margin: 20px;
 }
+#start-quiz {
+  display: none;
+}
+
+#question-container {
+  display: none;
+}
+
+#end-screen {
+  display: none;
+}
+
+#start-screen.hide {
+  display: none;
+}
+
+#start-screen.show {
+  display: block;
+}
 
 #options {
   display: grid;
