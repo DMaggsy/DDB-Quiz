@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Define variables
-  var usernameInput = document.getElementById('username-input');
-  var categories;
-  var currentCategoryIndex = 0;
-  var currentQuestionIndex = 0;
-  var totalQuestions = 0;
+  let usernameInput = document.getElementById('username-input');
+  let categories;
+  let currentCategoryIndex = 0;
+  let currentQuestionIndex = 0;
+  let totalQuestions = 0;
 
   // Function to handle the "Enter username" button click event
   function enterUsername() {
-    var username = usernameInput.value;
+    let username = usernameInput.value;
 
     // Hide the "Enter username" button
     document.getElementById('enter-username').style.display = 'none';
@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
     loadCategories();
   }
   // Get the start text element
-  var startText = document.getElementById('start-text');
+  let startText = document.getElementById('start-text');
 
   // Add event listener to the "Enter username" button
-  var enterUsernameButton = document.getElementById('enter-username');
+  let enterUsernameButton = document.getElementById('enter-username');
   enterUsernameButton.addEventListener('click', enterUsername);
 
   // Add this code before attaching the event listener
-  var startQuizButton = document.getElementById('start-quiz');
+  let startQuizButton = document.getElementById('start-quiz');
 
   // Add event listener to the "Start quiz" button
   startQuizButton.addEventListener('click', function () {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     questionContainer.style.display = 'block';
 
     // Get the username input value
-    var username = usernameInput.value;
+    let username = usernameInput.value;
     console.log('Username:', username);
 
     // Hide the start text
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadQuestion() {
-    var category = categories[currentCategoryIndex];
+    let category = categories[currentCategoryIndex];
     if (!category) {
       endQuiz(); // No more categories, end the quiz
       return;
     }
-    var question = category.questions[currentQuestionIndex];
+    let question = category.questions[currentQuestionIndex];
 
     // Set the question and options in the HTML elements
     questionElement.innerText = question.question;
@@ -171,6 +171,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Increment the question index
     currentQuestionIndex++;
+    // Check if the selected answer is correct
+    if (selectedOption.innerText === question.answer) {
+      score++; // Increment the score if the answer is correct
+    }
     // Check if all questions in the current category are answered
     var category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {
@@ -215,26 +219,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the result
     var resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
-      <h1>Your results</h1>
-      <p>Username: <strong>${usernameInput.value}</strong></p>
-      <p>Score: <strong>${score.toFixed(2)}%</strong></p>
-    `;
+    <h1>Your results</h1>
+    <p>Username: <strong>${usernameInput.value}</strong></p>
+    <p>Score: <strong>${score.toFixed(2)}%</strong></p>
+  `;
   }
 
 
 
 
-  function getCorrectAnswersCount() {
+  // Function to count the number of correct answers in a category
+  function getCorrectAnswersCount(category) {
     var correctCount = 0;
-    if (categories) {
-      for (var i = 0; i < categories.length; i++) {
-        var category = categories[i];
-        for (var j = 0; j < category.questions.length; j++) {
-          var question = category.questions[j];
-          if (question.answer === question.selectedOption) {
-            correctCount++;
-          }
-        }
+    for (var i = 0; i < category.questions.length; i++) {
+      if (category.questions[i].answer === category.questions[i].selectedOption) {
+        correctCount++;
       }
     }
     return correctCount;
@@ -250,17 +249,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Function to update the results element with the username and score
-  function updateResults() {
+  function updateResults(score) {
     var resultsElement = document.getElementById('results');
-    var score = (getCorrectAnswersCount() / totalQuestions) * 100;
-
     resultsElement.innerHTML = `
-    <h1>Your results</h1>
-    <p>Username: <strong>${usernameInput.value}</strong></p>
-    <p>Score: <strong>${score.toFixed(2)}%</strong></p>
-  `;
+      <h1>Your results</h1>
+      <p>Username: <strong>${usernameInput.value}</strong></p>
+      <p>Score: <strong>${score}</strong></p>
+    `;
   }
-
 
   // Submit the username and score to the Firebase Realtime Database
   function submitScore() {
@@ -284,17 +280,3 @@ document.addEventListener('DOMContentLoaded', function () {
     scoreInput.value = '';
   }
 });
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAEQRrArNsKOYMjeAVpYAWmaoK1e5HRYM0",
-  authDomain: "freshquiz-67c82.firebaseapp.com",
-  databaseURL: "https://freshquiz-67c82-default-rtdb.firebaseio.com",
-  projectId: "freshquiz-67c82",
-  storageBucket: "freshquiz-67c82.appspot.com",
-  messagingSenderId: "599950135432",
-  appId: "1:599950135432:web:cc30a733a8a661304b4f3d",
-  measurementId: "G-1444RBFMYN"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
