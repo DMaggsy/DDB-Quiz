@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentCategoryIndex = 0;
   let currentQuestionIndex = 0;
   let totalQuestions = 0;
+  let score = 0;
 
   // Function to handle the "Enter username" button click event
   function enterUsername() {
@@ -101,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
     optionsElement.innerHTML = '';
 
     // Create and append the option buttons
-    for (var i = 0; i < question.options.length; i++) {
-      var optionButton = document.createElement('button');
+    for (let i = 0; i < question.options.length; i++) {
+      let optionButton = document.createElement('button');
       optionButton.innerText = question.options[i];
       optionButton.classList.add('option-btn');
       optionButton.addEventListener('click', selectOption);
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Get the result element
-    var resultElement = document.createElement('div');
+    let resultElement = document.createElement('div');
 
     // Show the result element
     resultElement.style.display = 'none';
@@ -127,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Get the question container elements
-  var questionContainer = document.getElementById('question-container');
-  var questionElement = document.getElementById('question');
-  var optionsElement = document.getElementById('options');
+  let questionContainer = document.getElementById('question-container');
+  let questionElement = document.getElementById('question');
+  let optionsElement = document.getElementById('options');
 
   // Get the submit button and result elements
-  var submitButton = document.getElementById('submit-btn');
-  var resultElement = document.getElementById('result');
+  let submitButton = document.getElementById('submit-btn');
+  let resultElement = document.getElementById('result');
 
   // Show the submit button
   document.getElementById('submit-btn').style.display = 'block';
@@ -146,12 +147,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to handle option selection
   function selectOption(event) {
-    var selectedOption = event.target;
-    var category = categories[currentCategoryIndex];
-    var question = category.questions[currentQuestionIndex];
+    let selectedOption = event.target;
+    let category = categories[currentCategoryIndex];
+    let question = category.questions[currentQuestionIndex];
 
     // Remove the "selected" class from all option buttons
-    var optionButtons = optionsElement.querySelectorAll('.option-btn');
+    let optionButtons = optionsElement.querySelectorAll('.option-btn');
     optionButtons.forEach(function (button) {
       button.classList.remove('selected');
     });
@@ -163,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function submitAnswer() {
     // Check if an option is selected
-    var selectedOption = optionsElement.querySelector('.selected');
+    let selectedOption = optionsElement.querySelector('.selected');
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
       score++; // Increment the score if the answer is correct
     }
     // Check if all questions in the current category are answered
-    var category = categories[currentCategoryIndex];
+    let category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {
       // Check if there are more categories
       if (currentCategoryIndex + 1 < categories.length) {
@@ -194,8 +195,8 @@ document.addEventListener('DOMContentLoaded', function () {
     loadQuestion();
 
     // Clear the selected option and enable option buttons
-    var optionButtons = optionsElement.querySelectorAll('.option-btn');
-    for (var i = 0; i < optionButtons.length; i++) {
+    let optionButtons = optionsElement.querySelectorAll('.option-btn');
+    for (let i = 0; i < optionButtons.length; i++) {
       optionButtons[i].disabled = false;
       optionButtons[i].classList.remove('selected');
     }
@@ -204,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to end the quiz and display the result
   function endQuiz() {
     // Get the end screen element
-    var endScreen = document.getElementById('end-screen');
+    let endScreen = document.getElementById('end-screen');
 
     // Hide the question container
     questionContainer.style.display = 'none';
@@ -213,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
     endScreen.style.display = 'block';
 
     // Display the result
-    var resultsElement = document.getElementById('results');
+    let resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
     <h1>Your results</h1>
     <p>Username: <strong>${usernameInput.value}</strong></p>
@@ -225,10 +226,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to calculate the number of correct answers
   function getCorrectAnswersCount() {
-    var correctCount = 0;
-    for (var i = 0; i < categories.length; i++) {
-      var category = categories[i];
-      for (var j = 0; j < category.questions.length; j++) {
+    let correctCount = 0;
+    for (let i = 0; i < categories.length; i++) {
+      let category = categories[i];
+      for (let j = 0; j < category.questions.length; j++) {
         if (category.questions[j].answer === category.questions[j].selectedOption) {
           correctCount++;
         }
@@ -240,8 +241,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to calculate the total number of questions in all categories
   function getTotalQuestionsCount() {
-    var totalQuestionsCount = 0;
-    for (var i = 0; i < categories.length; i++) {
+    let totalQuestionsCount = 0;
+    for (let i = 0; i < categories.length; i++) {
       totalQuestionsCount += categories[i].questions.length;
     }
     return totalQuestionsCount;
@@ -249,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to update the results element with the username and score
   function updateResults(score) {
-    var resultsElement = document.getElementById('results');
+    let resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
       <h1>Your results</h1>
       <p>Username: <strong>${usernameInput.value}</strong></p>
@@ -260,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Submit the username and score to the Firebase Realtime Database
   function submitScore() {
     // Get the username and score from the user input
-    var username = usernameInput.value;
+    let username = usernameInput.value;
 
     // Update the results element with the username and score
     updateResults(score);
