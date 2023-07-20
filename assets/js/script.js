@@ -168,15 +168,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
-
+  
     // Increment the question index
     currentQuestionIndex++;
+  
+    // Get the current question from the category
+    let category = categories[currentCategoryIndex];
+    let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
+  
     // Check if the selected answer is correct
     if (selectedOption.innerText === question.answer) {
       score++; // Increment the score if the answer is correct
     }
+  
     // Check if all questions in the current category are answered
-    let category = categories[currentCategoryIndex];
     if (currentQuestionIndex >= category.questions.length) {
       // Check if there are more categories
       if (currentCategoryIndex + 1 < categories.length) {
@@ -189,11 +194,10 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
     }
-
-
+  
     // Load the next question
     loadQuestion();
-
+  
     // Clear the selected option and enable option buttons
     let optionButtons = optionsElement.querySelectorAll('.option-btn');
     for (let i = 0; i < optionButtons.length; i++) {
@@ -201,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
       optionButtons[i].classList.remove('selected');
     }
   }
+  
 
   // Function to end the quiz and display the result
   function endQuiz() {
