@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to handle the "Enter username" button click event
   function enterUsername() {
+
+    // Get the username input value
     let username = usernameInput.value;
+    console.log('Username:', username);
 
     // Hide the "Enter username" button
     document.getElementById('enter-username').style.display = 'none';
@@ -50,10 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show the question container
     questionContainer.style.display = 'block';
-
-    // Get the username input value
-    let username = usernameInput.value;
-    console.log('Username:', username);
 
     // Hide the start text
     startText.style.display = 'none';
