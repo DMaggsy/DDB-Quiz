@@ -162,86 +162,82 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  function submitAnswer() {
-    // Check if an option is selected
-    let selectedOption = optionsElement.querySelector('.selected');
-    if (!selectedOption) {
-      return; // Exit the function if no option is selected
+function submitAnswer() {
+  // Check if an option is selected
+  let selectedOption = optionsElement.querySelector('.selected');
+  if (!selectedOption) {
+    return; // Exit the function if no option is selected
+  }
+
+  // Increment the question index
+  currentQuestionIndex++;
+
+  // Get the current question from the category
+  let category = categories[currentCategoryIndex];
+  let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
+
+  if (selectedOption.innerText === question.correctOption) {
+    score++; // Increment the score if the answer is correct
+  }
+  
+
+  // Check if all questions in the current category are answered
+  if (currentQuestionIndex >= category.questions.length) {
+    // Check if there are more categories
+    if (currentCategoryIndex + 1 < categories.length) {
+      // Move to the next category
+      currentCategoryIndex++;
+      currentQuestionIndex = 0;
+      // Load the next question
+      loadQuestion();
+    } else {
+      // End the quiz and display the result
+      displayResult();
     }
-  
-    // Increment the question index
-    currentQuestionIndex++;
-  
-    // Get the current question from the category
-    let category = categories[currentCategoryIndex];
-    let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
-  
-    // Check if the selected answer is correct
-    if (selectedOption.innerText === question.answer) {
-      score++; // Increment the score if the answer is correct
-    }
-  
-    // Check if all questions in the current category are answered
-    if (currentQuestionIndex >= category.questions.length) {
-      // Check if there are more categories
-      if (currentCategoryIndex + 1 < categories.length) {
-        // Move to the next category
-        currentCategoryIndex++;
-        currentQuestionIndex = 0;
-      } else {
-        // End the quiz and display the result
-        endQuiz();
-        return;
-      }
-    }
-  
+  } else {
     // Load the next question
     loadQuestion();
-  
-    // Clear the selected option and enable option buttons
-    let optionButtons = optionsElement.querySelectorAll('.option-btn');
-    for (let i = 0; i < optionButtons.length; i++) {
-      optionButtons[i].disabled = false;
-      optionButtons[i].classList.remove('selected');
-    }
-  }
-  
-
-  // Function to end the quiz and display the result
-  function endQuiz() {
-    // Get the end screen element
-    let endScreen = document.getElementById('end-screen');
-
-    // Hide the question container
-    questionContainer.style.display = 'none';
-
-    // Show the end screen
-    endScreen.style.display = 'block';
-
-    // Display the result
-    let resultsElement = document.getElementById('results');
-    resultsElement.innerHTML = `
-    <h1>Your results</h1>
-    <p>Username: <strong>${usernameInput.value}</strong></p>
-    <p>Score: <strong>${score.toFixed(2)}%</strong></p>
-  `;
   }
 
+  // Clear the selected option and enable option buttons
+  let optionButtons = optionsElement.querySelectorAll('.option-btn');
+  for (let i = 0; i < optionButtons.length; i++) {
+    optionButtons[i].disabled = false;
+    optionButtons[i].classList.remove('selected');
+  }
+}
+
+  
+
+// Function to end the quiz and display the result
+function endQuiz() {
+  // Get the end screen element
+  let endScreen = document.getElementById('end-screen');
+
+  // Hide the question container
+  questionContainer.style.display = 'none';
+
+  // Show the end screen
+  endScreen.style.display = 'block';
+
+}
 
 
-  // Function to calculate the number of correct answers
-  function getCorrectAnswersCount() {
-    let correctCount = 0;
-    for (let i = 0; i < categories.length; i++) {
-      let category = categories[i];
-      for (let j = 0; j < category.questions.length; j++) {
-        if (category.questions[j].answer === category.questions[j].selectedOption) {
-          correctCount++;
-        }
+
+
+// Function to calculate the number of answered questions
+function getAnsweredQuestionsCount() {
+  let answeredCount = 0;
+  for (let i = 0; i < categories.length; i++) {
+    let category = categories[i];
+    for (let j = 0; j < category.questions.length; j++) {
+      if (category.questions[j].selectedOption) {
+        answeredCount++;
       }
     }
-    return correctCount;
   }
+  return answeredCount;
+}
 
 
   // Function to calculate the total number of questions in all categories
@@ -253,15 +249,43 @@ document.addEventListener('DOMContentLoaded', function () {
     return totalQuestionsCount;
   }
 
-  // Function to update the results element with the username and score
-  function updateResults(score) {
+
+
+  function displayResult() {
+    // Calculate the total number of questions answered correctly
+    let correctCount = 0;
+    for (let i = 0; i < categories.length; i++) {
+      let category = categories[i];
+      for (let j = 0; j < category.questions.length; j++) {
+        let question = category.questions[j];
+        if (question.selectedOption === question.answer) {
+          correctCount++;
+        }
+      }
+    }
+  
+    // Calculate the score as a percentage
+    let scorePercentage = (correctCount / totalQuestions) * 100;
+  
+    // Get the end screen element
+    let endScreen = document.getElementById('end-screen');
+  
+    // Hide the question container
+    questionContainer.style.display = 'none';
+  
+    // Show the end screen
+    endScreen.style.display = 'block';
+  
+    // Display the result
     let resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
       <h1>Your results</h1>
       <p>Username: <strong>${usernameInput.value}</strong></p>
-      <p>Score: <strong>${score}</strong></p>
+      <p>Score: <strong>${scorePercentage.toFixed(2)}%</strong></p>
     `;
   }
+  
+  
 
   // Submit the username and score to the Firebase Realtime Database
   function submitScore() {
