@@ -212,9 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the end screen
     endScreen.style.display = 'block';
 
-    // Calculate the score
-    var score = (getCorrectAnswersCount() / totalQuestions) * 100;
-
     // Display the result
     var resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
@@ -226,17 +223,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-  // Function to count the number of correct answers in a category
-  function getCorrectAnswersCount(category) {
+  // Function to calculate the number of correct answers
+  function getCorrectAnswersCount() {
     var correctCount = 0;
-    for (var i = 0; i < category.questions.length; i++) {
-      if (category.questions[i].answer === category.questions[i].selectedOption) {
-        correctCount++;
+    for (var i = 0; i < categories.length; i++) {
+      var category = categories[i];
+      for (var j = 0; j < category.questions.length; j++) {
+        if (category.questions[j].answer === category.questions[j].selectedOption) {
+          correctCount++;
+        }
       }
     }
     return correctCount;
   }
+
 
   // Function to calculate the total number of questions in all categories
   function getTotalQuestionsCount() {
@@ -261,15 +261,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function submitScore() {
     // Get the username and score from the user input
     var username = usernameInput.value;
-    var score = score; // <-- Comment out this line
-
-    // Create a new entry in the Firebase Realtime Database
-    var database = firebase.database();
-    var scoresRef = database.ref('quiz-scores');
-    scoresRef.push({
-      username: username,
-      score: score
-    });
 
     // Update the results element with the username and score
     updateResults(score);
