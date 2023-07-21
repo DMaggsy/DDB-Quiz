@@ -110,9 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
     optionsElement.innerHTML = '';
 
     // Create and append the option buttons
-    for (let i = 0; i < question.options.length; i++) {
+    for (const element of question.options) {
       let optionButton = document.createElement('button');
-      optionButton.innerText = question.options[i];
+      optionButton.innerText = element;
       optionButton.classList.add('option-btn');
       optionButton.addEventListener('click', selectOption);
       optionsElement.appendChild(optionButton);
@@ -126,9 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Call the endQuiz() function if the quiz is over
     if (currentQuestionIndex >= totalQuestions) {
-      endQuiz(resultElement);
+      endQuiz();
       return;
     }
+
 
     // Return the result element
     return resultElement;
@@ -142,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Get the submit button and result elements
   let submitButton = document.getElementById('submit-btn');
-  let resultElement = document.getElementById('result');
 
 
   // Show the question container
@@ -154,8 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to handle option selection
   function selectOption(event) {
     let selectedOption = event.target;
-    let category = categories[currentCategoryIndex];
-    let question = category.questions[currentQuestionIndex];
 
     // Remove the "selected" class from all option buttons
     let optionButtons = optionsElement.querySelectorAll('.option-btn');
@@ -295,8 +293,6 @@ function getAnsweredQuestionsCount() {
 
   // Submit the username and score to the Firebase Realtime Database
   function submitScore() {
-    // Get the username and score from the user input
-    let username = usernameInput.value;
 
     // Update the results element with the username and score
     updateResults(score);
