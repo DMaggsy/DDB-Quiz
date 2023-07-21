@@ -205,9 +205,9 @@ function submitAnswer() {
 
   // Clear the selected option and enable option buttons
   let optionButtons = optionsElement.querySelectorAll('.option-btn');
-  for (let i = 0; i < optionButtons.length; i++) {
-    optionButtons[i].disabled = false;
-    optionButtons[i].classList.remove('selected');
+  for (const element of optionButtons) {
+    element.disabled = false;
+    element.classList.remove('selected');
   }
 }
 
