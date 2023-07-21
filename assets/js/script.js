@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to start the quiz
   function startQuiz() {
+    
     // Hide the "Start quiz" button
     document.getElementById('start-quiz').style.display = 'none';
 
