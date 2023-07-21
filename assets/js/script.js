@@ -166,65 +166,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-function submitAnswer() {
-  // Check if an option is selected
-  let selectedOption = optionsElement.querySelector('.selected');
-  if (!selectedOption) {
-    return; // Exit the function if no option is selected
-  }
+  function submitAnswer() {
+    // Check if an option is selected
+    let selectedOption = optionsElement.querySelector('.selected');
+    if (!selectedOption) {
+      return; // Exit the function if no option is selected
+    }
 
-  // Increment the question index
-  currentQuestionIndex++;
+    // Increment the question index
+    currentQuestionIndex++;
 
-  // Get the current question from the category
-  let category = categories[currentCategoryIndex];
-  let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
+    // Get the current question from the category
+    let category = categories[currentCategoryIndex];
+    let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
 
-  if (selectedOption.innerText === question.correctOption) {
-    score++; // Increment the score if the answer is correct
-  }
-  
+    if (selectedOption.innerText === question.correctOption) {
+      score++; // Increment the score if the answer is correct
+    }
 
-  // Check if all questions in the current category are answered
-  if (currentQuestionIndex >= category.questions.length) {
-    // Check if there are more categories
-    if (currentCategoryIndex + 1 < categories.length) {
-      // Move to the next category
-      currentCategoryIndex++;
-      currentQuestionIndex = 0;
+
+    // Check if all questions in the current category are answered
+    if (currentQuestionIndex >= category.questions.length) {
+      // Check if there are more categories
+      if (currentCategoryIndex + 1 < categories.length) {
+        // Move to the next category
+        currentCategoryIndex++;
+        currentQuestionIndex = 0;
+        // Load the next question
+        loadQuestion();
+      } else {
+        // End the quiz and display the result
+        displayResult();
+      }
+    } else {
       // Load the next question
       loadQuestion();
-    } else {
-      // End the quiz and display the result
-      displayResult();
     }
-  } else {
-    // Load the next question
-    loadQuestion();
+
+    // Clear the selected option and enable option buttons
+    let optionButtons = optionsElement.querySelectorAll('.option-btn');
+    for (const element of optionButtons) {
+      element.disabled = false;
+      element.classList.remove('selected');
+    }
   }
 
-  // Clear the selected option and enable option buttons
-  let optionButtons = optionsElement.querySelectorAll('.option-btn');
-  for (const element of optionButtons) {
-    element.disabled = false;
-    element.classList.remove('selected');
+
+
+  // Function to end the quiz and display the result
+  function endQuiz() {
+    // Get the end screen element
+    let endScreen = document.getElementById('end-screen');
+
+    // Hide the question container
+    questionContainer.style.display = 'none';
+
+    // Show the end screen
+    endScreen.style.display = 'block';
+
   }
-}
-
-  
-
-// Function to end the quiz and display the result
-function endQuiz() {
-  // Get the end screen element
-  let endScreen = document.getElementById('end-screen');
-
-  // Hide the question container
-  questionContainer.style.display = 'none';
-
-  // Show the end screen
-  endScreen.style.display = 'block';
-
-}
 
 
 
@@ -248,19 +248,19 @@ function endQuiz() {
         }
       }
     }
-  
+
     // Calculate the score as a percentage
     let scorePercentage = (correctCount / totalQuestions) * 100;
-  
+
     // Get the end screen element
     let endScreen = document.getElementById('end-screen');
-  
+
     // Hide the question container
     questionContainer.style.display = 'none';
-  
+
     // Show the end screen
     endScreen.style.display = 'block';
-  
+
     // Display the result
     let resultsElement = document.getElementById('results');
     resultsElement.innerHTML = `
@@ -269,17 +269,5 @@ function endQuiz() {
       <p>Score: <strong>${scorePercentage.toFixed(2)}%</strong></p>
     `;
   }
-  
-  
 
-  // Submit the username and score to the Firebase Realtime Database
-  function submitScore() {
-
-    // Update the results element with the username and score
-    updateResults(score);
-
-    // Clear the username and score inputs
-    usernameInput.value = '';
-    scoreInput.value = '';
-  }
 });
