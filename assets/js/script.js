@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to start the quiz
   function startQuiz() {
-    
+
     // Hide the "Start quiz" button
     document.getElementById('start-quiz').style.display = 'none';
 
@@ -184,7 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (selectedOption.innerText === question.correctOption) {
       score++; // Increment the score if the answer is correct
     }
-
+    // Update the score display
+    document.getElementById('score').innerText = `Score: ${score}`;
 
     // Check if all questions in the current category are answered
     if (currentQuestionIndex >= category.questions.length) {
@@ -238,6 +239,18 @@ document.addEventListener('DOMContentLoaded', function () {
     return totalQuestionsCount;
   }
 
+    // Function to calculate the number of correct answers
+function getCorrectAnswersCount() {
+  let correctCount = 0;
+  for (const category of categories) {
+    for (const question of category.questions) {
+      if (question.selectedOption === question.answer) {
+        correctCount++;
+      }
+    }
+  }
+  return correctCount;
+}
 
 
   function displayResult() {
