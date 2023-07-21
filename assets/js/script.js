@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let username = usernameInput.value;
     console.log('Username:', username);
 
+    // Hide Question container
+    document.getElementById('question-container').style.display = 'none';
+
     // Hide the "Enter username" button
     document.getElementById('enter-username').style.display = 'none';
 
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show the "Start quiz" button
     document.getElementById('start-quiz').style.display = 'block';
+
   }
 
   // Function to start the quiz
@@ -60,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load the categories from the JSON file
     loadCategories();
+
+    // Show the submit button after the quiz starts
+    submitButton.style.display = 'flex';
+
   });
 
 
@@ -136,8 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let submitButton = document.getElementById('submit-btn');
   let resultElement = document.getElementById('result');
 
-  // Show the submit button
-  document.getElementById('submit-btn').style.display = 'block';
 
   // Show the question container
   document.getElementById('question-container').style.display = 'block';
