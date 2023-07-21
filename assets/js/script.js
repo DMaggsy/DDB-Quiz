@@ -228,27 +228,11 @@ function endQuiz() {
 
 
 
-
-// Function to calculate the number of answered questions
-function getAnsweredQuestionsCount() {
-  let answeredCount = 0;
-  for (let i = 0; i < categories.length; i++) {
-    let category = categories[i];
-    for (let j = 0; j < category.questions.length; j++) {
-      if (category.questions[j].selectedOption) {
-        answeredCount++;
-      }
-    }
-  }
-  return answeredCount;
-}
-
-
   // Function to calculate the total number of questions in all categories
   function getTotalQuestionsCount() {
     let totalQuestionsCount = 0;
-    for (let i = 0; i < categories.length; i++) {
-      totalQuestionsCount += categories[i].questions.length;
+    for (const element of categories) {
+      totalQuestionsCount += element.questions.length;
     }
     return totalQuestionsCount;
   }
@@ -256,12 +240,9 @@ function getAnsweredQuestionsCount() {
 
 
   function displayResult() {
-    // Calculate the total number of questions answered correctly
     let correctCount = 0;
-    for (let i = 0; i < categories.length; i++) {
-      let category = categories[i];
-      for (let j = 0; j < category.questions.length; j++) {
-        let question = category.questions[j];
+    for (const category of categories) {
+      for (const question of category.questions) {
         if (question.selectedOption === question.answer) {
           correctCount++;
         }
