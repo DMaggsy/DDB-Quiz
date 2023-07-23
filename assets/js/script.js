@@ -264,7 +264,7 @@ function getCorrectAnswersCount() {
     }
 
     // Calculate the score as a percentage
-    let scorePercentage = (correctCount / totalQuestions) * 100;
+    let scorePercentage = (score / totalQuestions) * 100;
 
     // Get the end screen element
     let endScreen = document.getElementById('end-screen');
