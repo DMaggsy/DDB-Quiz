@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let category = categories[currentCategoryIndex];
     let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
 
-    if (selectedOption.innerText === question.correctOption) {
+    if (selectedOption.innerText === question.answer) {
       score++; // Increment the score if the answer is correct
     }
     // Update the score display
