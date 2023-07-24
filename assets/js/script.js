@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the "Start quiz" button
     document.getElementById('start-quiz').style.display = 'block';
 
+
   }
 
   // Function to start the quiz
@@ -50,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add this code before attaching the event listener
   let startQuizButton = document.getElementById('start-quiz');
 
+  // Get the Exit Quiz button
+  let exitButton = document.getElementById('Exit');
+
   // Add event listener to the "Start quiz" button
   startQuizButton.addEventListener('click', function () {
     console.log('Start quiz button clicked');
@@ -69,9 +73,47 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the submit button after the quiz starts
     submitButton.style.display = 'flex';
 
+    // Show the Exit Quiz button after the quiz starts
+    exitButton.style.display = 'block';
+
   });
 
+  // Add event listener to the "Exit Quiz" button
+  exitButton.addEventListener('click', function () {
+    // Reset the quiz state
+    currentCategoryIndex = 0;
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById('score').innerText = 'Score: 0';
+    document.getElementById('results').innerHTML = '';
 
+    // Hide the end screen
+    document.getElementById('end-screen').style.display = 'none';
+
+    // Hide the start quiz button
+    document.getElementById('start-quiz').style.display = 'none';
+
+    // Show the username input
+    document.getElementById('username-input').style.display = 'block';
+
+    // Show the "Enter username" button
+    document.getElementById('enter-username').style.display = 'block';
+
+    // Flex display for enter username and username input
+    document.getElementById('enter-username').style.display = 'flex';
+
+    // Show start text
+    startText.style.display = 'block';
+
+    // Hide the "Exit Quiz" button
+    exitButton.style.display = 'none';
+
+    //Hide the Question container
+    document.getElementById('question-container').style.display = 'none';
+
+    // Reset the username input value
+    usernameInput.value = '';
+  });
 
 
   // Function to load the categories from the JSON file
@@ -144,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Get the submit button and result elements
   let submitButton = document.getElementById('submit-btn');
-
 
   // Show the question container
   document.getElementById('question-container').style.display = 'block';
@@ -239,18 +280,18 @@ document.addEventListener('DOMContentLoaded', function () {
     return totalQuestionsCount;
   }
 
-    // Function to calculate the number of correct answers
-function getCorrectAnswersCount() {
-  let correctCount = 0;
-  for (const category of categories) {
-    for (const question of category.questions) {
-      if (question.selectedOption === question.answer) {
-        correctCount++;
+  // Function to calculate the number of correct answers
+  function getCorrectAnswersCount() {
+    let correctCount = 0;
+    for (const category of categories) {
+      for (const question of category.questions) {
+        if (question.selectedOption === question.answer) {
+          correctCount++;
+        }
       }
     }
+    return correctCount;
   }
-  return correctCount;
-}
 
 
   function displayResult() {
