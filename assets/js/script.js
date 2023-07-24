@@ -214,20 +214,24 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
-
+  
     // Increment the question index
     currentQuestionIndex++;
-
+  
     // Get the current question from the category
     let category = categories[currentCategoryIndex];
     let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
-
+  
     if (selectedOption.innerText === question.answer) {
       score++; // Increment the score if the answer is correct
     }
+  
+    // Calculate the score as a percentage
+    let scorePercentage = (score / totalQuestions) * 100;
+  
     // Update the score display based on the theme
-    updateScoreDisplay();
-
+    updateScoreDisplay(scorePercentage);
+  
     // Check if all questions in the current category are answered
     if (currentQuestionIndex >= category.questions.length) {
       // Check if there are more categories
@@ -245,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Load the next question
       loadQuestion();
     }
-
+  
     // Clear the selected option and enable option buttons
     let optionButtons = optionsElement.querySelectorAll('.option-btn');
     for (const element of optionButtons) {
@@ -253,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
       element.classList.remove('selected');
     }
   }
+  
 
 
 
@@ -305,64 +310,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
-
+  
     // Update the score displays for each theme
     shipwreckScore.innerHTML = `Score: ${score}`;
     smallboatScore.innerHTML = `Score: ${score}`;
     pirateshipScore.innerHTML = `Score: ${scorePercentage.toFixed(2)}%`;
   }
+  
 
   function displayResult() {
     let correctCount = getCorrectAnswersCount();
-
+  
     // Calculate the score as a percentage
-    let scorePercentage = (correctCount / totalQuestions) * 100;
-
+    let scorePercentage = (score / totalQuestions) * 100;
+  
     // Get the end screen element
     let endScreen = document.getElementById('end-screen');
-
+  
     // Hide the question container
     questionContainer.style.display = 'none';
-
+  
     // Show the end screen
     endScreen.style.display = 'block';
-
-
+  
     // Determine the theme based on the score percentage
     if (scorePercentage >= 0 && scorePercentage <= 33.33) {
       // Shipwreck theme
       let shipwreckResults = document.getElementById('shipwreck-results');
       shipwreckResults.innerHTML = `
-      <p>Username: <strong>${usernameInput.value}</strong></p>
-      <h2>Thanks for playing!</h2>
-    `;
+        <h2>Username: <strong>${usernameInput.value}</strong></h2>
+        <h1>Oh No! Badluck, you're shipwrecked!</h1>
+        <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
+        <h2>Thanks for playing!</h2>
+      `;
       shipwreckTheme.style.display = 'block';
-
+  
       // Update the score display for the shipwreck theme
       updateScoreDisplay(scorePercentage);
     } else if (scorePercentage > 33.33 && scorePercentage <= 63.33) {
       // Small boat theme
       let smallboatResults = document.getElementById('smallboat-results');
       smallboatResults.innerHTML = `
-      <p>Username: <strong>${usernameInput.value}</strong></p>
-      <h2>Thanks for playing!</h2>
-    `;
+        <h2>Username: <strong>${usernameInput.value}</strong></h2>
+        <h1>You just about got away!</h1>
+        <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
+        <h2>Thanks for playing!</h2>
+      `;
       smallboatTheme.style.display = 'block';
-
+  
       // Update the score display for the small boat theme
       updateScoreDisplay(scorePercentage);
     } else {
       // Large pirate ship theme
       let pirateshipResults = document.getElementById('pirateship-results');
       pirateshipResults.innerHTML = `
-      <p>Username: <strong>${usernameInput.value}</strong></p>
-      <h2>Thanks for playing!</h2>
-    `;
+        <h2>Username: <strong>${usernameInput.value}</strong></h2>
+        <h1>Smooth Sailing! Nice one!</h1>
+        <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
+        <h2>Thanks for playing!</h2>
+      `;
       pirateshipTheme.style.display = 'block';
-
+  
       // Update the score display for the large pirate ship theme
       updateScoreDisplay(scorePercentage);
     }
   }
-
+  
 });
