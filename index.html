@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="eng">
+
 <head>
-    <title>Maggy's Quiz</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DDB Quiz">
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
-    <script src="assets/js/script.js"></script>    
+  <title>Maggy's Quiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DDB Quiz">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+  <script src="assets/js/script.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>The Fresh Quiz</h1>
-        </div>
-        <div class="content">
-          <p id="start-text">Test your knowledge against the fresh quiz & other players. <br>
-            Choose your username and press Enter to start the quiz.</p>
-          <input type="text" id="username-input" placeholder="Your username">
-          <button type="button" id="enter-username">Enter username</button>
-          <button type="button" id="start-quiz" style="display: none;">Start quiz</button>
-        </div>
-        
-        <div id="question-container" style="display: none;">
-            <h2 id="question"></h2>
-            <div id="options"></div>
-            <button id="submit-btn">Submit</button>
-            <button id="Exit" style="display: none;">Exit Quiz</button>
-            <div id="result"></div>
-        </div>
-        <div id="end-screen" style="display: none;">
-          <div id="results"></div>
-          <div id="score"></div>
-          <button id="submit-score" style="display: none;">Submit Score</button>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>The Fresh Quiz</h1>
+    </div>
+    <div class="content">
+      <p id="start-text">Test your knowledge against the fresh quiz & other players. <br>
+        Choose your username and press Enter to start the quiz.</p>
+      <input type="text" id="username-input" placeholder="Your username">
+      <button type="button" id="enter-username">Enter username</button>
+      <button type="button" id="start-quiz" style="display: none;">Start quiz</button>
+    </div>
+
+    <div id="question-container" style="display: none;">
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <button id="submit-btn">Submit</button>
+      <button id="Exit" style="display: none;">Exit Quiz</button>
+      <div id="result"></div>
+    </div>
+    <div id="end-screen" style="display: none;">
+      <div id="results"></div>
+      <button id="submit-score" style="display: none;">Submit Score</button>
+    </div>
+    <div id="shipwreck-theme" style="display: none;">
+      <h1>Oh No! Badluck, you're shipwrecked!</h1>
+      <div id="shipwreck-results"></div>
+      <div id="shipwreck-score"></div>
+      <h2>Thanks for playing!</h2>
+      <button id="Exit" style="display: none;">Exit Quiz</button>
+    </div>
+    <div id="smallboat-theme" style="display: none;">
+      <h1>You just about got away!</h1>
+      <div id="smallboat-results"></div>
+      <div id="smallboat-score"></div>
+      <h2>Thanks for playing!</h2>
+      <button id="Exit" style="display: none;">Exit Quiz</button>
+    </div>
+    <div id="pirateship-theme" style="display: none;">
+      <h1>Smooth Sailing! Nice one!</h1>
+      <div id="pirateship-results"></div>
+      <div id="pirateship-score"></div>
+      <h2>Thanks for playing!</h2>
+      <button id="Exit" style="display: none;">Exit Quiz</button>
+    </div>
+
     </div>
 </body>
+
 </html>

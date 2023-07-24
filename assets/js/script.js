@@ -225,8 +225,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (selectedOption.innerText === question.answer) {
       score++; // Increment the score if the answer is correct
     }
-    // Update the score display
-    document.getElementById('score').innerText = `Score: ${score}`;
+    // Update the score display based on the theme
+    updateScoreDisplay();
 
     // Check if all questions in the current category are answered
     if (currentQuestionIndex >= category.questions.length) {
@@ -293,19 +293,30 @@ document.addEventListener('DOMContentLoaded', function () {
     return correctCount;
   }
 
+  let shipwreckTheme = document.getElementById('shipwreck-theme');
+  let smallboatTheme = document.getElementById('smallboat-theme');
+  let pirateshipTheme = document.getElementById('pirateship-theme');
 
-  function displayResult() {
-    let correctCount = 0;
-    for (const category of categories) {
-      for (const question of category.questions) {
-        if (question.selectedOption === question.answer) {
-          correctCount++;
-        }
-      }
-    }
+  function updateScoreDisplay() {
+    // Get the score display elements for each theme
+    let shipwreckScore = document.getElementById('shipwreck-score');
+    let smallboatScore = document.getElementById('smallboat-score');
+    let pirateshipScore = document.getElementById('pirateship-score');
 
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
+
+    // Update the score displays for each theme
+    shipwreckScore.innerHTML = `Score: ${score}`;
+    smallboatScore.innerHTML = `Score: ${score}`;
+    pirateshipScore.innerHTML = `Score: ${scorePercentage.toFixed(2)}%`;
+  }
+
+  function displayResult() {
+    let correctCount = getCorrectAnswersCount();
+
+    // Calculate the score as a percentage
+    let scorePercentage = (correctCount / totalQuestions) * 100;
 
     // Get the end screen element
     let endScreen = document.getElementById('end-screen');
@@ -316,13 +327,42 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the end screen
     endScreen.style.display = 'block';
 
-    // Display the result
-    let resultsElement = document.getElementById('results');
-    resultsElement.innerHTML = `
-      <h1>Your results</h1>
+
+    // Determine the theme based on the score percentage
+    if (scorePercentage >= 0 && scorePercentage <= 33.33) {
+      // Shipwreck theme
+      let shipwreckResults = document.getElementById('shipwreck-results');
+      shipwreckResults.innerHTML = `
       <p>Username: <strong>${usernameInput.value}</strong></p>
-      <p>Score: <strong>${scorePercentage.toFixed(2)}%</strong></p>
+      <h2>Thanks for playing!</h2>
     `;
+      shipwreckTheme.style.display = 'block';
+
+      // Update the score display for the shipwreck theme
+      updateScoreDisplay(scorePercentage);
+    } else if (scorePercentage > 33.33 && scorePercentage <= 63.33) {
+      // Small boat theme
+      let smallboatResults = document.getElementById('smallboat-results');
+      smallboatResults.innerHTML = `
+      <p>Username: <strong>${usernameInput.value}</strong></p>
+      <h2>Thanks for playing!</h2>
+    `;
+      smallboatTheme.style.display = 'block';
+
+      // Update the score display for the small boat theme
+      updateScoreDisplay(scorePercentage);
+    } else {
+      // Large pirate ship theme
+      let pirateshipResults = document.getElementById('pirateship-results');
+      pirateshipResults.innerHTML = `
+      <p>Username: <strong>${usernameInput.value}</strong></p>
+      <h2>Thanks for playing!</h2>
+    `;
+      pirateshipTheme.style.display = 'block';
+
+      // Update the score display for the large pirate ship theme
+      updateScoreDisplay(scorePercentage);
+    }
   }
 
 });
