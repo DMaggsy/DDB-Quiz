@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
       shipwreckResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Oh No! Badluck, you're shipwrecked!</h1>
-        <img
+        <img src="assets/images/shipwrecked.png" alt="Shipwrecked"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
       `;
