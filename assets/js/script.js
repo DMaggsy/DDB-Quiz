@@ -354,6 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
       smallboatResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>You just about got away!</h1>
+        <img src="assets/images/smallboat.png" alt="Small boat"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
       `;
