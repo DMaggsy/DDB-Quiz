@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
       shipwreckResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Oh No! Badluck, you're shipwrecked!</h1>
-        <img src="assets/images/shipwrecked.png" alt="Shipwrecked"/>
+        <img src="assets/images/Shipwreck.png" alt="Shipwrecked"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
       `;
@@ -368,6 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pirateshipResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Smooth Sailing! Nice one!</h1>
+        <img src="assets/images/pirateship.png" alt="Pirate ship"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
       `;
