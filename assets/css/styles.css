@@ -54,6 +54,9 @@ h2 {
   display: none;
 }
 
+#shipwreck-score, #smallboat-score, #pirateship-score {
+  display: none;
+}
 #question-container {
   display: none;
 }
