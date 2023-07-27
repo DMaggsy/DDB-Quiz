@@ -1,39 +1,61 @@
 {
-    "categories": [
-        {
+    "categories": [{
             "name": "Ocean Inhabitants",
-            "questions": [
-                {
+            "questions": [{
                     "question": "Which sea creature is the largest in the world?",
-                    "options": ["Giant Squid", "Blue Whale", "Great White Shark", "Leatherback Sea Turtle"],
+                    "options": ["Giant Squid", "Blue Whale", "Sperm Whale", "Hump Back Whale"],
                     "answer": "Blue Whale"
                 },
                 {
                     "question": "What is the most venomous marine animal?",
-                    "options": ["Sea Snake", "Stonefish", "Blue-Ringed Octopus", "Lionfish"],
-                    "answer": "Blue-Ringed Octopus"
+                    "options": ["Sea Snake", "Australian Box Jellyfish", "Blue-Ringed Octopus", "Lionfish"],
+                    "answer": "Australian Box Jellyfish"
                 },
                 {
-                    "question": "Which sea creature can change its color for camouflage?",
-                    "options": ["Dolphin", "Clownfish", "Octopus", "Shark"],
-                    "answer": "Octopus"
+                    "question": "Which sea creature has the most teeth?",
+                    "options": ["Tiger Shark", "Bull Shark", "Tuna Fish", "Rainbow Slug"],
+                    "answer": "Rainbow Slug"
                 },
                 {
-                    "question": "What do Sea Turtles primarily eat?",
-                    "options": ["Seaweed", "Fish", "Jellyfish", "Crabs"],
-                    "answer": "Jellyfish"
+                    "question": "How deep can Sperm Whales dive?",
+                    "options": ["4,500 Feet", "6,200 Feet", "7,200 Feet", "8,000 Feet"],
+                    "answer": "7,200 Feet"
                 },
                 {
                     "question": "What is the deepest part of the ocean called?",
                     "options": ["Mariana Trench", "Atlantic Abyss", "Hadal Zone", "Challenger Deep"],
                     "answer": "Mariana Trench"
+                },
+                {
+                    "question": "What is estimated to be the longest sea inhabitant to our knowledge?",
+                    "options": ["Blue Whale", "Basking Shark", "Megalodon", "Siphonophore"],
+                    "answer": "Siphonophore"
+                },
+                {
+                    "question": "How powerful is the bite force from a Saltwater Crocodile?",
+                    "options": ["1,000 pounds (psi)", "2,000 pounds (psi)", "3,300 pounds (psi)", "3,700 pounds (psi)"],
+                    "answer": "3,700 pounds (psi)"
+                },
+                {
+                    "question": "How many people are killed by sharks on average each year?",
+                    "options": ["5", "10", "18", "22"],
+                    "answer": "10"
+                },
+                {
+                    "question": "How long were the largest Megalodon teeth?",
+                    "options": ["4 inches", "6 inches", "7 inches", "8 inches"],
+                    "answer": "7 inches"
+                },
+                {
+                    "question": "What's wingspan can a Giant Manta Ray reach?",
+                    "options": ["15 foot", "20 foot", "24 foot", "29 foot"],
+                    "answer": "29 foot"
                 }
             ]
         },
         {
             "name": "Human Interaction",
-            "questions": [
-                {
+            "questions": [{
                     "question": "Which famous ship sank on its maiden voyage in 1912?",
                     "options": ["RMS Titanic", "SS Normandie", "HMHS Britannic", "RMS Lusitania"],
                     "answer": "RMS Titanic"
@@ -57,13 +79,37 @@
                     "question": "Which ancient civilization was known for its naval power in the Mediterranean Sea?",
                     "options": ["Roman Empire", "Ancient Greece", "Phoenicia", "Egyptian Empire"],
                     "answer": "Phoenicia"
+                },
+                {
+                    "question": "In which war was the Battle of Trafalgar, a significant naval conflict?",
+                    "options": ["World War I", "World War II", "American Civil War", "Napoleonic Wars"],
+                    "answer": "Napoleonic Wars"
+                },
+                {
+                    "question": "Albert Hicks (the United States' last pirate) was the last person to be executed for piracy in the United States. What year was he executed?",
+                    "options": ["1790", "1826", "1856", "1860"],
+                    "answer": "1860"
+                },
+                {
+                    "question": "What was the largest battleship ever built?",
+                    "options": ["Yamato", "HMS Vanguard", "Bismarck", "King George V"],
+                    "answer": "Yamato"
+                },
+                {
+                    "question": "What's the record for longest held breath underwater?",
+                    "options": ["15 Minutes, 4 seconds", "18 Minutes, 12 seconds", "22 Minutes, 10 seconds", "24 Minutes, 37 seconds"],
+                    "answer": "24 Minutes, 37 seconds"
+                },
+                {
+                    "question": "How many ships were involved in D-Day?",
+                    "options": ["4,000", "6,000", "7,000", "8,000"],
+                    "answer": "7,000"
                 }
             ]
         },
         {
             "name": "General",
-            "questions": [
-                {
+            "questions": [{
                     "question": "What percentage of the Earth's surface is covered by oceans?",
                     "options": ["50%", "60%", "70%", "80%"],
                     "answer": "70%"
@@ -84,9 +130,34 @@
                     "answer": "Arctic Ocean"
                 },
                 {
-                    "question": "What is the name of the current that circulates around the perimeter of the Pacific Ocean?",
-                    "options": ["North Atlantic Drift", "Gulf Stream", "Equatorial Counter Current", "Pacific Gyre"],
-                    "answer": "Pacific Gyre"
+                    "question": "How high was the largest wave every recorded?",
+                    "options": ["700 feet", "1,000 feet", "1,500 feet", "1,720 feet"],
+                    "answer": "1,720 feet"
+                },
+                {
+                    "question": "In which year did the Tohoku earthquake and tsunami hit Japan?",
+                    "options": ["2009", "2010", "2011", "2012"],
+                    "answer": "2011"
+                },
+                {
+                    "question": "What percentage of the UK population cannot swim?",
+                    "options": ["15%", "20%", "28%", "31%"],
+                    "answer": "31%"
+                },
+                {
+                    "question": "Which is the worlds largest shipbuilding company?",
+                    "options": ["Hyundai Heavy Industries", "Samsung Heavy Industries", "DSME", "Fincantieri"],
+                    "answer": "Hyundai Heavy Industries"
+                },
+                {
+                    "question": "What is the largest type of Sea Snake?",
+                    "options": ["Hydrophis spiralis", "Laticauda colubrina", "Pelamis platurus", "Emydocephalus annulatus"],
+                    "answer": "Hydrophis spiralis"
+                },
+                {
+                    "question": "How many tons of plastic are dumped into the ocean each year?",
+                    "options": ["7 Million Tons", "9 Million Tons", "11 Million Tons", "14 Million Tons"],
+                    "answer": "14 Million Tons"
                 }
             ]
         }
