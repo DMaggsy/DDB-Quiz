@@ -32,7 +32,9 @@ body {
   color: rgb(2, 1, 0);
 }
 
-
+#start-text {
+  color: black;
+}
 .content {
   display: flex;
   flex-direction: column;
