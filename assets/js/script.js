@@ -84,7 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
     currentCategoryIndex = 0;
     currentQuestionIndex = 0;
     score = 0;
-    document.getElementById('score').innerText = 'Score: 0';
+    document.getElementById('shipwreck-score').innerText = 'Score: 0';
+    document.getElementById('smallboat-score').innerText = 'Score: 0';
+    document.getElementById('pirateship-score').innerText = 'Score: 0';
+
     document.getElementById('results').innerHTML = '';
 
     // Hide the end screen
