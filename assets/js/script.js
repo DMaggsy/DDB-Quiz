@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get the username input value
     let username = usernameInput.value;
     console.log('Username:', username);
+    
+    // Check if the username input value is empty
+    if (username === '') {
+    // If the username input value is empty, display an error message and exit the function
+    alert('Please enter a username in order to proceed.');
+    return;
+  }
 
     // Hide Question container
     document.getElementById('question-container').style.display = 'none';
@@ -217,24 +224,24 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!selectedOption) {
       return; // Exit the function if no option is selected
     }
-  
+
     // Increment the question index
     currentQuestionIndex++;
-  
+
     // Get the current question from the category
     let category = categories[currentCategoryIndex];
     let question = category.questions[currentQuestionIndex - 1]; // Subtract 1 to get the correct question
-  
+
     if (selectedOption.innerText === question.answer) {
       score++; // Increment the score if the answer is correct
     }
-  
+
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
-  
+
     // Update the score display based on the theme
     updateScoreDisplay(scorePercentage);
-  
+
     // Check if all questions in the current category are answered
     if (currentQuestionIndex >= category.questions.length) {
       // Check if there are more categories
@@ -252,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Load the next question
       loadQuestion();
     }
-  
+
     // Clear the selected option and enable option buttons
     let optionButtons = optionsElement.querySelectorAll('.option-btn');
     for (const element of optionButtons) {
@@ -260,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
       element.classList.remove('selected');
     }
   }
-  
+
 
 
 
@@ -313,29 +320,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
-  
+
     // Update the score displays for each theme
     shipwreckScore.innerHTML = `Score: ${score}`;
     smallboatScore.innerHTML = `Score: ${score}`;
     pirateshipScore.innerHTML = `Score: ${scorePercentage.toFixed(2)}%`;
   }
-  
+
 
   function displayResult() {
     let correctCount = getCorrectAnswersCount();
-  
+
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
-  
+
     // Get the end screen element
     let endScreen = document.getElementById('end-screen');
-  
+
     // Hide the question container
     questionContainer.style.display = 'none';
-  
+
     // Show the end screen
     endScreen.style.display = 'block';
-  
+
     // Determine the theme based on the score percentage
     if (scorePercentage >= 0 && scorePercentage <= 33.33) {
       // Shipwreck theme
@@ -348,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2>Thanks for playing!</h2>
       `;
       shipwreckTheme.style.display = 'block';
-  
+
       // Update the score display for the shipwreck theme
       updateScoreDisplay(scorePercentage);
     } else if (scorePercentage > 33.33 && scorePercentage <= 63.33) {
@@ -362,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2>Thanks for playing!</h2>
       `;
       smallboatTheme.style.display = 'block';
-  
+
       // Update the score display for the small boat theme
       updateScoreDisplay(scorePercentage);
     } else {
@@ -376,10 +383,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2>Thanks for playing!</h2>
       `;
       pirateshipTheme.style.display = 'block';
-  
+
       // Update the score display for the large pirate ship theme
       updateScoreDisplay(scorePercentage);
     }
   }
-  
+
 });
