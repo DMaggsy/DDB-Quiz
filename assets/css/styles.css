@@ -26,6 +26,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
   background-color: rgba(255, 255, 255, 0.7); /* white but slightly transparent box */
   border: 1px solid #dddddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -228,11 +229,16 @@ img {
   }
 
   .content h2 {
-      font-size: 18px;
+      font-size: 16px;
+  }
+
+  img {
+      width: 100%;
+      height: auto;
   }
 
   button {
-      padding: 8px 16px;
+      padding: 5px 10px;
       font-size: 14px;
   }
 }
