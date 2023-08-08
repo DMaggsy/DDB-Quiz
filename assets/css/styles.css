@@ -63,6 +63,21 @@ body {
   color: #333333;
 }
 
+#end-screen-exit-button {
+  position: absolute;
+  bottom: 10px;
+  align-items: center;
+  background-color: red;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+}
 .exit-button {
   position: absolute;
   top: 10px;
