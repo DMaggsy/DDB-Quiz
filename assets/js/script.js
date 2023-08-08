@@ -353,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="assets/images/Shipwreck.png" alt="Shipwrecked"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
+        <button id="Exit" class="exit-button">X</button>
       `;
       shipwreckTheme.style.display = 'block';
 
@@ -367,6 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="assets/images/smallboat.png" alt="Small boat"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
+        <button id="Exit" class="exit-button">X</button>
       `;
       smallboatTheme.style.display = 'block';
 
@@ -381,12 +383,55 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="assets/images/pirateship.png" alt="Pirate ship"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
+        <button id="Exit" class="exit-button">X</button>
       `;
       pirateshipTheme.style.display = 'block';
 
       // Update the score display for the large pirate ship theme
       updateScoreDisplay(scorePercentage);
     }
+
+    // Redefine & Add event listener to the "Exit Quiz" button
+    let exitButton = document.getElementById('Exit');
+    exitButton.addEventListener('click', function() {
+      // Reset the quiz state
+      currentCategoryIndex = 0;
+      currentQuestionIndex = 0;
+      score = 0;
+      document.getElementById('shipwreck-score').innerText = 'Score: 0';
+      document.getElementById('smallboat-score').innerText = 'Score: 0';
+      document.getElementById('pirateship-score').innerText = 'Score: 0';
+
+      document.getElementById('results').innerHTML = '';
+
+      // Hide the end screen
+      document.getElementById('end-screen').style.display = 'none';
+
+      // Hide the start quiz button
+      document.getElementById('start-quiz').style.display = 'none';
+
+      // Show the username input
+      document.getElementById('username-input').style.display = 'block';
+
+      // Show the "Enter username" button
+      document.getElementById('enter-username').style.display = 'block';
+
+      // Flex display for enter username and username input
+      document.getElementById('enter-username').style.display = 'flex';
+
+      // Show start text
+      startText.style.display = 'block';
+
+      // Hide the "Exit Quiz" button
+      exitButton.style.display = 'none';
+
+      //Hide the Question container
+      document.getElementById('question-container').style.display = 'none';
+
+      // Reset the username input value
+      usernameInput.value = '';
+    });
+    
   }
 
 });
