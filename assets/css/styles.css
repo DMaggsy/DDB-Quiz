@@ -34,6 +34,7 @@ body {
 
 #start-text {
   color: black;
+  font-size: 20px;
 }
 .content {
   display: flex;

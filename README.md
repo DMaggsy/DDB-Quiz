@@ -17,16 +17,16 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ### *First Time Visitor Goals*
 
-* As a first time visitor, I want to be able to easily navigate throughout the site to find content.
-* As a first time visitor, I want to be able to easily understand the quiz and how to play.
+- As a first time visitor, I want to be able to easily navigate throughout the site to find content.
+- As a first time visitor, I want to be able to easily understand the quiz and how to play.
 
 ### *Returning Visitor Goals*
 
-* As a returning visitor, I want to be able to try and beat my previous score.
+- As a returning visitor, I want to be able to try and beat my previous score.
 
 ### *Frequent User Goals*
 
-* As a frequent user, I want to be able to see if there are any new questions added to the quiz.
+- As a frequent user, I want to be able to see if there are any new questions added to the quiz.
 
 <hr>
 
@@ -87,3 +87,23 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 ## *Design*
 
 ### *Colour Scheme ID via Hex Codes*
+
+## *Typography*
+
+## *Manual Testing*
+
+## *Testing*
+
+- In order to confirm the correct functionality, responsiveness and user experience of the website, it was tested on the following browsers:
+
+  - Google Chrome
+
+    -
+  - Microsoft Edge
+  
+    -
+  - Mozilla Firefox
+  
+    -
+
+## *Bugs*
