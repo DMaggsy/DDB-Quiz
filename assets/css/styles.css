@@ -57,6 +57,23 @@ body {
   color: #333333;
 }
 
+.exit-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+}
+
+
 /* Style the Question H2 */
 h2 {
   margin: 20px;
