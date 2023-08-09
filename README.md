@@ -2,6 +2,10 @@
 
 # *The Fresh Quiz*
 
+![Intro Image](assets\images\startingshot.png)
+
+<hr>
+
 ## *Description*
 
 This quiz will cover an ocean themed set of questions. This will test your knowledge on ocean inhabitants, Human interactions with the sea & Ocean general knowledge. All questions are multiple choice, and at the end of the quiz you will be given your score. You are required to enter a username at the beginning of the quiz so we can log your score and display your result at the end.
@@ -32,15 +36,29 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ## *Features*
 
-- Username input
+- Title & Intro Text
 
-<hr>
+ - The title and intro text will inform the overall idea of the quiz and how to start.
 
-- Enter Username button
+![Title & Intro](assets/images/titleandintro.png)
+
+- Username input & button
+
+ - The username input and button will allow the user to type and enter their chosen username so they can be identified and their score can be logged.
+
+![Username Input](assets/images/usernameinput.png)
+
+<br>
+
+![Enter Username Button](assets/images/enterusernamebutton.png)
 
 <hr>
 
 - Background Image 
+
+ - The background image features an old fashioned ship to fit in with the theme of the ocean and pirates.
+
+![Background Image](assets\images\background.jpg)
 
 <hr>
 
