@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function () {
   // Define variables
   let usernameInput = document.getElementById('username-input');
@@ -36,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  // Function to start the quiz
-  function startQuiz() {
-
-    // Hide the "Start quiz" button
-    document.getElementById('start-quiz').style.display = 'none';
-
-    // Show the question container
-    document.getElementById('question-container').style.display = 'block';
-
-    // Load the categories from the JSON file
-    loadCategories();
-  }
   // Get the start text element
   let startText = document.getElementById('start-text');
 
