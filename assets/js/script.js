@@ -284,19 +284,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return totalQuestionsCount;
   }
 
-  // Function to calculate the number of correct answers
-  function getCorrectAnswersCount() {
-    let correctCount = 0;
-    for (const category of categories) {
-      for (const question of category.questions) {
-        if (question.selectedOption === question.answer) {
-          correctCount++;
-        }
-      }
-    }
-    return correctCount;
-  }
-
   let shipwreckTheme = document.getElementById('shipwreck-theme');
   let smallboatTheme = document.getElementById('smallboat-theme');
   let pirateshipTheme = document.getElementById('pirateship-theme');
@@ -318,7 +305,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function displayResult() {
-    let correctCount = getCorrectAnswersCount();
 
     // Calculate the score as a percentage
     let scorePercentage = (score / totalQuestions) * 100;
