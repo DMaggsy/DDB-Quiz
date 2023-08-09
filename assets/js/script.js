@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Please enter a username in order to proceed.');
       return;
     }
+      // Hide the start text
+      document.getElementById('start-text').style.display = 'none';
+
+      // Show the "Good Luck!" text
+      document.getElementById('good-luck-text').style.display = 'block';
 
     // Hide Question container
     document.getElementById('question-container').style.display = 'none';
@@ -56,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Hide the start quiz button
     startQuizButton.style.display = 'none';
+
+    // Hide the "Good Luck!" text
+    document.getElementById('good-luck-text').style.display = 'none'; // <-- Add this line
 
     // Show the question container
     questionContainer.style.display = 'block';
