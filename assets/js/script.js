@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pirateshipResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Smooth Sailing! Nice one!</h1>
-        <img src="assets/images/pirateship.png" alt="Pirate ship"/>
+        <img src="assets/images/Pirateship.png" alt="Pirate ship"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
         <button id="end-screen-exit-button">X</button>

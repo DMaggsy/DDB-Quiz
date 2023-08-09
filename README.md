@@ -2,7 +2,7 @@
 
 # *The Fresh Quiz*
 
-![Intro Image](assets\images\startingshot.png)
+![Intro Image](assets/images/startingshot.png)
 
 <hr>
 
@@ -13,7 +13,7 @@ This quiz will cover an ocean themed set of questions. This will test your knowl
 <hr>
 The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
-![Responsive Mockup](assets\images\responsive-mockup.png)
+![Responsive Mockup](assets/images/responsive-mockup.png)
 
 <hr> 
 
@@ -36,47 +36,55 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ## *Features*
 
-- Title & Intro Text
+## *Title & Intro Text*
 
  - The title and intro text will inform the overall idea of the quiz and how to start.
 
 ![Title & Intro](assets/images/titleandintro.png)
 
-- Username input & button
+## *Username input & button*
 
  - The username input and button will allow the user to type and enter their chosen username so they can be identified and their score can be logged.
 
 ![Username Input](assets/images/usernameinput.png)
 
-<br>
+<hr>
 
-![Enter Username Button](assets/images/enterusernamebutton.png)
+## *Start Quiz Button*
+
+ - The start quiz button will allow the user to start the quiz once they have entered their username. Users will also see a good luck message prior to starting. 
+
+![Start Quiz Button](assets/images/startquizbutton.png)
 
 <hr>
 
-- Background Image 
+## *Background Image* 
 
  - The background image features an old fashioned ship to fit in with the theme of the ocean and pirates.
 
-![Background Image](assets\images\background.jpg)
+![Background Image](assets/images/background.jpg)
 
 <hr>
 
-- Start Quiz button
+## *Question Screen*
+
+ - The question screen will display the quiz title, the question, the multiple choice options and the submit answer button. 
+
+![Question Screen](assets/images/questionscreen.png)
 
 <hr>
 
-- Multiple Choice Options 
+## *Exit Button*
+
+ - Once a user starts the quiz, the Exit quiz button will be visibile throughout. This will allow the user to exit the quiz at any time. It is also clearly indicated with the conventional red box and white cross (like a browser window). 
+
+![Exit Button](assets/images/exitbutton.png)
 
 <hr>
 
-- Submut Answer button
+## *Results Screen Outcome*
 
-<hr>
-
-- Exit Quiz button 
-
-<hr>
+ - The results screen will display the users score and a message based on their score. The user will also be able to see their username and exit button to head back to the start screen.
 
 - Varying Results Screen 
 
@@ -87,6 +95,28 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
   - 66.34-100% Pirateship Theme 
 
 <hr>
+
+## *Shipwreck Theme*
+
+ - Users will see this results screen if they score between 0-33.33% (please note the exit button is in the far top left corner as per earlier screenshot). 
+
+ ![Shipwreck Theme](assets/images/shipwreckscreenshot.png)
+
+<hr>
+
+## *Smallboat Theme*
+
+ - Users will see this results screen if they score between 33.34-66.33% (please note the exit button is in the far top left corner as per earlier screenshot).
+
+  - ![Smallboat Theme](assets/images/smallboatscreenshot.png)
+
+<hr>
+
+## *Pirateship Theme*
+
+ - Users will see this results screen if they score between 66.34-100% (please note the exit button is in the far top left corner as per earlier screenshot).
+
+  - ![Pirateship Theme](assets/images/pirateshipscreenshot.png)
 
 ### Languages Used
 
