@@ -63,23 +63,7 @@ body {
   color: #333333;
 }
 
-#end-screen-exit-button {
-  position: absolute;
-  bottom: 10px;
-  align-items: center;
-  background-color: red;
-  color: white;
-  border: none;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 5px;
-  border-radius: 5px;
-  display: none; /* Initially hidden */
-}
-.exit-button {
+#end-screen-exit-button, .exit-button {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -91,8 +75,13 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  margin: 5px;
   border-radius: 5px;
   display: none; /* Initially hidden */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  text-align: center; /* This ensures the text is centered */
 }
 
 
