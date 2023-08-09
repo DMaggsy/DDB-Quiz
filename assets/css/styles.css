@@ -75,6 +75,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  margin: 5px;
   border-radius: 5px;
   display: none; /* Initially hidden */
 }
