@@ -226,3 +226,4 @@ Code: Fixed by:     // Check if the username input value is empty
     - ![Mozilla Firefox](documentation/firefox2.png)
     - ![Mozilla Firefox](documentation/firefox3.png)
     
+## *Deployment*
