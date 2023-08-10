@@ -190,3 +190,15 @@ document.getElementById('pirateship-score').innerText = 'Score: 0';
 We needed it to work so users had to enter a username before proceeding. If they try just clicking the Enter username button without having 
 typed in a username, we need to show an error message staing "Please enter a username in order to proceed."
 
+![Bug 2](documentation\usernamebug.mp4)
+
+I fixed this by implementing an if statement to check if the username input is blank. If it is, then the error message will be displayed. If it is not blank, then the quiz will start as normal.
+
+Code: Fixed by:     // Check if the username input value is empty
+    if (username === '') {
+    // If the username input value is empty, display an error message and exit the function
+    alert('Please enter a username in order to proceed.');
+    return;
+  }
+
+<hr>
