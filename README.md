@@ -147,23 +147,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 - The font used throughout the quiz is "Roboto sans-serif". This font was chosen as it is easy to read and is a common font used on many websites.
 
-
-
-## *Manual Testing*
-
-## *Testing*
-
-- In order to confirm the correct functionality, responsiveness and user experience of the website, it was tested on the following browsers:
-
-  - Google Chrome
-
-    -
-  - Microsoft Edge
-  
-    -
-  - Mozilla Firefox
-  
-    -
+<hr>
 
 ## *Bugs*
 
@@ -202,3 +186,34 @@ Code: Fixed by:     // Check if the username input value is empty
   }
 
 <hr>
+
+## *Manual Testing*
+
+| feature | action | expected result | tested | passed | comments |
+| --- | --- | --- | --- | --- | --- |
+| Username Data Field | Click on field | User can start typing username | Yes | Yes | |
+| Username Data Field | Type in username | Username is displayed in field | Yes | Yes | |
+| Enter Username Button | Click on Enter Username button | Quiz accepts username | Yes | Yes | |
+| Enter Username Button | Click on Enter Username button | Quiz does not accept blank username | Yes | Yes | |
+| Start Quiz Button | Click on Start Quiz button | Quiz starts | Yes | Yes | |
+| Multiple Choice Answers | Click on answer | Answer changes colour | Yes | Yes | |
+| Submit Answer Button | Click on Submit Answer button | Answer is submitted | Yes | Yes | |
+| Submit Answer Button | Click on Submit Answer button without selected an answer | Quiz does not accept blank answer | Yes | Yes | |
+| Exit Quiz Button | Click on Exit Quiz button | Quiz exits | Yes | Yes | |
+| Shipwreck Theme | Score between 0-33.33% | Shipwreck theme is displayed | Yes | Yes | |
+| Smallboat Theme | Score between 33.34-66.33% | Smallboat theme is displayed | Yes | Yes | |
+| Pirateship Theme | Score between 66.34-100% | Pirateship theme is displayed | Yes | Yes | | 
+
+## *Testing*
+
+- In order to confirm the correct functionality, responsiveness and user experience of the website, it was tested on the following browsers:
+
+  - Google Chrome
+
+    -
+  - Microsoft Edge
+  
+    -
+  - Mozilla Firefox
+  
+    -
