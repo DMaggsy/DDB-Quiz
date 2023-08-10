@@ -221,5 +221,8 @@ Code: Fixed by:     // Check if the username input value is empty
     - ![Microsoft Edge](documentation/edge3.png)
     
   - Mozilla Firefox
-  
+   
+    - ![Mozilla Firefox](documentation/firefox1.png)
+    - ![Mozilla Firefox](documentation/firefox2.png)
+    - ![Mozilla Firefox](documentation/firefox3.png)
     
