@@ -2,7 +2,7 @@
 
 # *The Fresh Quiz*
 
-![Intro Image](assets/images/startingshot.png)
+![Intro Image](documentation/startingshot.png)
 
 <hr>
 
@@ -13,7 +13,7 @@ This quiz will cover an ocean themed set of questions. This will test your knowl
 <hr>
 The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
-![Responsive Mockup](assets/images/responsive-mockup.png)
+![Responsive Mockup](documentation/responsive-mockup.png)
 
 <hr> 
 
@@ -40,13 +40,13 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - The title and intro text will inform the overall idea of the quiz and how to start.
 
-![Title & Intro](assets/images/titleandintro.png)
+![Title & Intro](documentation/titleandintro.png)
 
 ## *Username input & button*
 
  - The username input and button will allow the user to type and enter their chosen username so they can be identified and their score can be logged.
 
-![Username Input](assets/images/usernameinput.png)
+![Username Input](documentation/usernameinput.png)
 
 <hr>
 
@@ -54,7 +54,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - The start quiz button will allow the user to start the quiz once they have entered their username. Users will also see a good luck message prior to starting. 
 
-![Start Quiz Button](assets/images/startquizbutton.png)
+![Start Quiz Button](documentation/startquizbutton.png)
 
 <hr>
 
@@ -70,7 +70,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - The question screen will display the quiz title, the question, the multiple choice options and the submit answer button. The quiz is designed so only one multiple choice option can be selected at a time. However, the user can change their answer as many times as they like before submitting. The Submit button will only be clickable once an option has been selected.
 
-![Question Screen](assets/images/questionscreen.png)
+![Question Screen](documentation/questionscreen.png)
 
 <hr>
 
@@ -78,7 +78,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Once a user starts the quiz, the Exit quiz button will be visibile throughout. This will allow the user to exit the quiz at any time (this will take them back to the initial username screen). It is also clearly indicated with the conventional red box and white cross (like an old fashioned browser window). 
 
-![Exit Button](assets/images/exitbutton.png)
+![Exit Button](documentation/exitbutton.png)
 
 <hr>
 
@@ -100,7 +100,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Users will see this results screen if they score between 0-33.33% (please note the exit button is in the far top left corner as per earlier screenshot). 
 
- ![Shipwreck Theme](assets/images/shipwreckscreenshot.png)
+ ![Shipwreck Theme](documentation/shipwreckscreenshot.png)
 
 <hr>
 
@@ -108,7 +108,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Users will see this results screen if they score between 33.34-66.33% (please note the exit button is in the far top left corner as per earlier screenshot).
 
-  - ![Smallboat Theme](assets/images/smallboatscreenshot.png)
+  - ![Smallboat Theme](documentation/smallboatscreenshot.png)
 
 <hr>
 
@@ -116,7 +116,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Users will see this results screen if they score between 66.34-100% (please note the exit button is in the far top left corner as per earlier screenshot).
 
-  - ![Pirateship Theme](assets/images/pirateshipscreenshot.png)
+  - ![Pirateship Theme](documentation/pirateshipscreenshot.png)
 
 ### Languages Used
 
@@ -139,7 +139,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 - The colour scheme for this quiz was designed to make the users interaction as simple as possible. For example, all in game buttons start Green and then change to yellow once selected. This makes it clear to the user which option they have picked. We also have the exit button in a clearly defined red & white box to make it familiar to the user. 
 
 
- - ![Colour Palette](assets/images/quizcolors.png)
+ - ![Colour Palette](documentation/quizcolors.png)
 
  <hr>
 
