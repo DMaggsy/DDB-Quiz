@@ -173,4 +173,20 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  This script refers to this line within the main Javascript file (under add event listener for "Exit Quiz" button): document.getElementById('score').innerText = 'Score: 0';
 
- ![Bug 1](documentation/bug1.png)
+ ![Bug 1](documentation/exitbug.png)
+
+ ![Bug 1 Continued](documentation/exitbugsource.png)
+
+ I solved the issue by removing the above line and adding in the shipwreck, smallboat & pirateship scores to reset respectively. 
+
+document.getElementById('shipwreck-score').innerText = 'Score: 0';
+document.getElementById('smallboat-score').innerText = 'Score: 0';
+document.getElementById('pirateship-score').innerText = 'Score: 0';
+
+<hr>
+
+2. Users were able to click the enter username button, without having actually entered a username. Meaning it could be left blank. 
+
+We needed it to work so users had to enter a username before proceeding. If they try just clicking the Enter username button without having 
+typed in a username, we need to show an error message staing "Please enter a username in order to proceed."
+
