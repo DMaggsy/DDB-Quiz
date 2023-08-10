@@ -9,6 +9,7 @@
 html, body {
   font-size: calc(60% + 0.8vmin);
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Set a background image for the body */

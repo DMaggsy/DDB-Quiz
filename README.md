@@ -136,11 +136,18 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ### *Colour Scheme ID via Hex Codes*
 
-- The colour scheme for this quiz was designed to make the users interaction as simple as possible i.e. a clear indication of having selected an option/submitting an answer. 
+- The colour scheme for this quiz was designed to make the users interaction as simple as possible. For example, all in game buttons start Green and then change to yellow once selected. This makes it clear to the user which option they have picked. We also have the exit button in a clearly defined red & white box to make it familiar to the user. 
 
- - 
+
+ - ![Colour Palette](assets/images/quizcolors.png)
+
+ <hr>
 
 ## *Typography*
+
+- The font used throughout the quiz is "Roboto sans-serif". This font was chosen as it is easy to read and is a common font used on many websites.
+
+
 
 ## *Manual Testing*
 
