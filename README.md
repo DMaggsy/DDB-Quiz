@@ -62,7 +62,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - The background image features an old fashioned ship to fit in with the theme of the ocean and pirates.
 
-![Background Image](assets/images/background.jpg)
+![Background Image](documentation/background.jpg)
 
 <hr>
 
