@@ -8,7 +8,7 @@
 
 ## *Description*
 
-This quiz will cover an ocean themed set of questions. This will test your knowledge on ocean inhabitants, Human interactions with the sea & Ocean general knowledge. All questions are multiple choice, and at the end of the quiz you will be given your score. You are required to enter a username at the beginning of the quiz so we can log your score and display your result at the end.
+This quiz will cover an ocean themed set of questions. This will test your knowledge on ocean inhabitants, Human interactions with the sea & Ocean general knowledge. All questions are multiple choice, and at the end of the quiz you will be given your score. You are required to enter a username at the beginning of the quiz so we can log your score and display your result at the end. The overall theme of the quiz is based on the ocean and pirates, hence the instruction to outrun the pirates!
 
 <hr>
 The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
@@ -68,7 +68,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ## *Question Screen*
 
- - The question screen will display the quiz title, the question, the multiple choice options and the submit answer button. 
+ - The question screen will display the quiz title, the question, the multiple choice options and the submit answer button. The quiz is designed so only one multiple choice option can be selected at a time. However, the user can change their answer as many times as they like before submitting. The Submit button will only be clickable once an option has been selected.
 
 ![Question Screen](assets/images/questionscreen.png)
 
@@ -76,7 +76,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 ## *Exit Button*
 
- - Once a user starts the quiz, the Exit quiz button will be visibile throughout. This will allow the user to exit the quiz at any time. It is also clearly indicated with the conventional red box and white cross (like a browser window). 
+ - Once a user starts the quiz, the Exit quiz button will be visibile throughout. This will allow the user to exit the quiz at any time (this will take them back to the initial username screen). It is also clearly indicated with the conventional red box and white cross (like an old fashioned browser window). 
 
 ![Exit Button](assets/images/exitbutton.png)
 
@@ -135,6 +135,10 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 ## *Design*
 
 ### *Colour Scheme ID via Hex Codes*
+
+- The colour scheme for this quiz was designed to make the users interaction as simple as possible i.e. a clear indication of having selected an option/submitting an answer. 
+
+ - 
 
 ## *Typography*
 
