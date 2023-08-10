@@ -108,7 +108,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Users will see this results screen if they score between 33.34-66.33% (please note the exit button is in the far top left corner as per earlier screenshot).
 
-  - ![Smallboat Theme](documentation/smallboatscreenshot.png)
+ ![Smallboat Theme](documentation/smallboatscreenshot.png)
 
 <hr>
 
@@ -116,7 +116,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Users will see this results screen if they score between 66.34-100% (please note the exit button is in the far top left corner as per earlier screenshot).
 
-  - ![Pirateship Theme](documentation/pirateshipscreenshot.png)
+ ![Pirateship Theme](documentation/pirateshipscreenshot.png)
 
 ### Languages Used
 
@@ -139,7 +139,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 - The colour scheme for this quiz was designed to make the users interaction as simple as possible. For example, all in game buttons start Green and then change to yellow once selected. This makes it clear to the user which option they have picked. We also have the exit button in a clearly defined red & white box to make it familiar to the user. 
 
 
- - ![Colour Palette](documentation/quizcolors.png)
+ ![Colour Palette](documentation/quizcolors.png)
 
  <hr>
 
