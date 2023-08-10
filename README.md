@@ -166,3 +166,11 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
     -
 
 ## *Bugs*
+
+ - Solved Bugs
+
+ 1. When using the exit button, nothing was happening. We were getting an error in the console: "script.js:87 Uncaught TypeError: Cannot set properties of null (setting 'innerText') at HTMLButtonElement.<anonymous> (script.js:87:48)."
+
+ This script refers to this line within the main Javascript file (under add event listener for "Exit Quiz" button): document.getElementById('score').innerText = 'Score: 0';
+
+ ![Bug 1](documentation/bug1.png)
