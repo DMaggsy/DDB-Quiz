@@ -210,10 +210,13 @@ Code: Fixed by:     // Check if the username input value is empty
 
   - Google Chrome
 
-    -
+    - ![Google Chrome](documentation/chrome1.png)
+    - ![Google Chrome](documentation/chrome2.png)
+    - ![Google Chrome](documentation/chrome3.png)
+  
   - Microsoft Edge
   
-    -
+    
   - Mozilla Firefox
   
-    -
+    
