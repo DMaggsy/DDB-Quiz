@@ -93,11 +93,6 @@ body {
   overflow: hidden; /* To ensure that nothing spills out of the button */
 }
 
-
-/* Style the Question H2 */
-h2 {
-  margin: 20px;
-}
 #start-quiz {
   display: none;
 }
