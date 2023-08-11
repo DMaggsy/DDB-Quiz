@@ -12,6 +12,15 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  font-size: 1.6em; /* relative to the base font size set on the html/body */
+}
+
+h2 {
+  font-size: 1.3em; /* relative to the base font size set on the html/body */
+  margin: 20px;
+}
+
 /* Set a background image for the body */
 body {
   background: url('../images/background.jpg') no-repeat center center fixed;
@@ -42,12 +51,10 @@ body {
 
 #start-text {
   color: black;
-  font-size: 20px;
 }
 
 #good-luck-text {
   color: black;
-  font-size: 20px;
 }
 .content {
   display: flex;
@@ -65,7 +72,6 @@ body {
   align-content: center;
   border-radius: 5px;
   width: 100%;
-  font-size: 16px;
   color: #333333;
 }
 
@@ -159,13 +165,11 @@ h2 {
 
 .header h1 {
   color: #333333;
-  font-size: 24px;
   margin-bottom: 20%;
 }
 
 .content h2 {
   color: #333333;
-  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -179,7 +183,6 @@ button {
   color: #ffffff;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
 }
 
@@ -211,56 +214,84 @@ img {
 .footer {
   text-align: center;
   color: #666666;
-  font-size: 13px;
   margin-bottom: 20px;
+}
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+  /* Adjustments for desktop devices */
+  .container {
+      max-width: 50%;
+  }
+
+  #username-input {
+      width: 60%;
+  }
+
+  #end-screen-exit-button, .exit-button {
+    left: 25%; 
+}
 }
 
 /* Tablet */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
-  /* Add styles specific to tablet devices here */
+  /* Adjustments for tablet devices */
   .container {
       max-width: 80%;
   }
 
   #username-input {
-      width: 90%;
+      width: 60%;
   }
+
+  #end-screen-exit-button, .exit-button {
+    left: 10%; 
+}
 }
 
 /* Mobile (landscape) */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-  /* Add styles specific to landscape mobile devices here */
+  /* Adjustments for landscape mobile devices */
   .container {
       max-width: 90%;
   }
 
   #username-input {
-      width: 95%;
+      width: 60%;
   }
+
+  #end-screen-exit-button, .exit-button {
+    left: 8%; 
+}
 }
 
 /* Mobile (portrait) */
 @media only screen and (max-width: 479px) {
-  /* Add styles specific to portrait mobile devices here */
+  /* Adjustments for portrait mobile devices */
   .container {
       max-width: 100%;
       padding: 10px;
   }
 
   h2 {
-      font-size: 18px;
+      font-size: 1.5em;
   }
+
+  #options, 
+  #submit-btn, 
+  #start-text, 
+  #good-luck-text, 
+  #enter-username {
+    font-size: 1.4em;
+  }
+
+  #end-screen-exit-button, .exit-button {
+    left: 8%; 
+}
+  
 
   #username-input {
-      width: 98%;
-  }
-
-  .header h1 {
-      font-size: 20px;
-  }
-
-  .content h2 {
-      font-size: 16px;
+      width: 60%;
   }
 
   img {
@@ -270,6 +301,6 @@ img {
 
   button {
       padding: 5px 10px;
-      font-size: 14px;
+      font-size: 0.9em; /* relative to the base font size */
   }
 }
