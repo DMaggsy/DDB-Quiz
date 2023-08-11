@@ -225,5 +225,11 @@ Code: Fixed by:     // Check if the username input value is empty
     - ![Mozilla Firefox](documentation/firefox1.png)
     - ![Mozilla Firefox](documentation/firefox2.png)
     - ![Mozilla Firefox](documentation/firefox3.png)
+
+## *Responsiveness*
+
+- The app was tested with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
+
+
     
 ## *Deployment*

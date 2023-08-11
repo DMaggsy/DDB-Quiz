@@ -223,6 +223,15 @@ img {
       width: 60%;
   }
 
+  #options, 
+  #submit-btn, 
+  #start-text, 
+  #good-luck-text, 
+  #start-quiz,
+  #enter-username {
+    font-size: 1.4em;
+  }
+
   #end-screen-exit-button, .exit-button {
     left: 25%; 
 }
@@ -239,6 +248,15 @@ img {
       width: 60%;
   }
 
+  #options, 
+  #submit-btn, 
+  #start-text, 
+  #good-luck-text, 
+  #start-quiz,
+  #enter-username {
+    font-size: 1.4em;
+  }
+
   #end-screen-exit-button, .exit-button {
     left: 10%; 
 }
@@ -253,6 +271,15 @@ img {
 
   #username-input {
       width: 60%;
+  }
+
+  #options, 
+  #submit-btn, 
+  #start-text, 
+  #good-luck-text, 
+  #start-quiz,
+  #enter-username {
+    font-size: 1.4em;
   }
 
   #end-screen-exit-button, .exit-button {
@@ -276,6 +303,7 @@ img {
   #submit-btn, 
   #start-text, 
   #good-luck-text, 
+  #start-quiz,
   #enter-username {
     font-size: 1.4em;
   }
