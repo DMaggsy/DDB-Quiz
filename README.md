@@ -265,5 +265,9 @@ Code: Fixed by:     // Check if the username input value is empty
     - 1366x1024
 
      - [Tablet 4](documentation/1366x1024_.gif)
+
+  - Desktop
+
+    - 
     
 ## *Deployment*
