@@ -250,6 +250,10 @@ Code: Fixed by:     // Check if the username input value is empty
 
   - Tablet 
 
-    - 
+    - 600x960
+
+     - [Tablet](documentation/600x960_.gif)
+
+    
     
 ## *Deployment*
