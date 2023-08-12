@@ -280,6 +280,10 @@ Code: Fixed by:     // Check if the username input value is empty
 
      - [Desktop](documentation/1680x1050_.gif)
 
+    - 1920x1080
     
+     - [Desktop](documentation/1920x1080_.gif)
+
+<hr>
     
 ## *Deployment*
