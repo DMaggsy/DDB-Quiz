@@ -330,6 +330,12 @@ Code: Fixed by:     // Check if the username input value is empty
     ![Desktop](documentation/1920x1080_.gif)
 
 <hr>
+
+## *Lighthouse Testing*
+
+- The website was tested using [Lighthouse](https://developers.google.com/web/tools/lighthouse).
+
+![Lighthouse 1](documentation/lighthouse1.png)
     
 ## *Deployment*
 
