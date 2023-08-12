@@ -237,6 +237,11 @@ Code: Fixed by:     // Check if the username input value is empty
 
 ![HTML Validator](documentation/htmlchecker.png)
 
+
+- CSS
+
+- The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
 ## *Responsiveness*
 
 - The app was tested with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
