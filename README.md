@@ -230,6 +230,10 @@ Code: Fixed by:     // Check if the username input value is empty
 
 - The app was tested with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
 
+  - Mobile
 
+    - 320x480
+
+     - 
     
 ## *Deployment*
