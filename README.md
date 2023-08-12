@@ -243,5 +243,9 @@ Code: Fixed by:     // Check if the username input value is empty
     - 375x667
 
      - [Mobile 3](documentation/375x667_.gif)
+
+    - 414x736
+
+     - [Mobile 4](documentation/414x736_.gif)
     
 ## *Deployment*
