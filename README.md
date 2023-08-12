@@ -13,6 +13,8 @@ This quiz will cover an ocean themed set of questions. This will test your knowl
 <hr>
 The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
+<br>
+
 ![Responsive Mockup](documentation/responsive-mockup.png)
 
 <hr> 
@@ -361,5 +363,7 @@ Code: Fixed by:     // Check if the username input value is empty
 
 - Screenshots and videos were recording for the Readme file using [Snipping Tool](https://support.microsoft.com/en-us/windows/open-snipping-tool-and-take-a-screenshot-a35ac9ff-4a58-24c9-3253-f12bac9f9d44#:~:text=Press%20Windows%20logo%20key%20%2B%20Shift,%2C%20and%20Free%2Dform%20mode.)
 
+
+## *Wireframes*
 
 
