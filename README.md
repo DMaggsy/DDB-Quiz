@@ -368,4 +368,6 @@ Code: Fixed by:     // Check if the username input value is empty
 
 ![Wireframe 1](documentation/mobile-home.png)
 
+![Wireframe 2](documentation/mobile-question.png)
+
 
