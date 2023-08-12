@@ -234,6 +234,10 @@ Code: Fixed by:     // Check if the username input value is empty
 
     - 320x480
 
-     - 
+     - [Mobile 1](documentation/320x480_.gif)
+
+    - 320x568
+
+     - [Mobile 2]()
     
 ## *Deployment*
