@@ -242,6 +242,33 @@ Code: Fixed by:     // Check if the username input value is empty
 
 - The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
+- There were no errors found.
+
+![CSS Validator](documentation/csschecker.png)
+
+
+- Javascript
+
+- The Javascript code was tested using [JSHint](https://jshint.com/).
+
+![Javascript Validator 1](documentation/jshint1.png)
+
+![Javascript Validator 2](documentation/jshint2.png)
+
+![Javascript Validator 3](documentation/jshint3.png)
+
+![Javascript Validator 4](documentation/jshint4.png)
+
+![Javascript Validator 5](documentation/jshint5.png)
+
+![Javascript Validator 6](documentation/jshint6.png)
+
+![Javascript Validator 7](documentation/jshint7.png)
+
+![Javascript Validator 8](documentation/jshint8.png)
+
+![Javascript Validator 9](documentation/jshint9.png)
+
 ## *Responsiveness*
 
 - The app was tested with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
