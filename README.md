@@ -366,4 +366,6 @@ Code: Fixed by:     // Check if the username input value is empty
 
 ## *Wireframes*
 
+![Wireframe 1](documentation/mobile-home.png)
+
 
