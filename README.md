@@ -234,56 +234,89 @@ Code: Fixed by:     // Check if the username input value is empty
 
     - 320x480
 
-     - [Mobile 1](documentation/320x480_.gif)
+    ![Mobile 1](documentation/320x480_.gif)
 
     - 320x568
 
-     - [Mobile 2](documentation/320x568_.gif)
+    ![Mobile 2](documentation/320x568_.gif)
 
     - 375x667
 
-     - [Mobile 3](documentation/375x667_.gif)
+    ![Mobile 3](documentation/375x667_.gif)
 
     - 414x736
 
-     - [Mobile 4](documentation/414x736_.gif)
+    ![Mobile 4](documentation/414x736_.gif)
 
   - Tablet 
 
     - 600x960
 
-     - [Tablet 1](documentation/600x960_.gif)
+    ![Tablet 1](documentation/600x960_.gif)
 
     - 768x1024
 
-     - [Tablet 2](documentation/768x1024_.gif)
+    ![Tablet 2](documentation/768x1024_.gif)
 
     - 1024x768
 
-     - [Tablet 3](documentation/1024x768_.gif)
+    ![Tablet 3](documentation/1024x768_.gif)
 
     - 1366x1024
 
-     - [Tablet 4](documentation/1366x1024_.gif)
+    ![Tablet 4](documentation/1366x1024_.gif)
 
   - Desktop
 
     - 1024x600
 
-     - [Desktop](documentation/1024x600_.gif)
+    ![Desktop](documentation/1024x600_.gif)
 
     - 1366x768
 
-     - [Desktop](documentation/1366x768_.gif)
+    ![Desktop](documentation/1366x768_.gif)
 
     - 1680x1050
 
-     - [Desktop](documentation/1680x1050_.gif)
+    ![Desktop](documentation/1680x1050_.gif)
 
     - 1920x1080
     
-     - [Desktop](documentation/1920x1080_.gif)
+    ![Desktop](documentation/1920x1080_.gif)
 
 <hr>
     
 ## *Deployment*
+
+- This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
+
+- The live link can be found here - [The Fresh Quiz](https://dmaggsy.github.io/The-Fresh-Quiz/)
+
+<hr>
+
+## *Local Deployment*
+
+- In order to make a local copy of this repository, you can type the following command in your IDE terminal:
+
+  - `git clone https://github.com/DMaggsy/The-Fresh-Quiz.git
+
+- Alternatively, if using Gitpod, you can [click here](https://gitpod.io/#https://github.com/DMaggsy/The-Fresh-Quiz.git)
+
+<hr>
+
+## *Credits*
+
+- All the end screen images were created within [Canva](https://www.canva.com/)
+
+- The background image was taken from [Unsplash](https://unsplash.com/photos/z-gL7br3MTk)
+
+- The Hex code image was created using [Coolors](https://coolors.co/)
+
+- Responsive testing videos were converted to gif using [Adobe Express](https://express.adobe.com/)
+
+- The code template was taken from [Code Institute](https://codeinstitute.net/)
+
+- Screenshots and videos were recording for the Readme file using [Snipping Tool](https://support.microsoft.com/en-us/windows/open-snipping-tool-and-take-a-screenshot-a35ac9ff-4a58-24c9-3253-f12bac9f9d44#:~:text=Press%20Windows%20logo%20key%20%2B%20Shift,%2C%20and%20Free%2Dform%20mode.)
+
+
+
