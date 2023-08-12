@@ -231,7 +231,11 @@ Code: Fixed by:     // Check if the username input value is empty
 
 - HTML 
 
+- The HTML code was tested using [W3C HTML Validator](https://validator.w3.org/).
 
+- There was one warning in regards to the empty h2 tag for id="question". This is because the question is dynamically generated via Javascript & the json file. 
+
+![HTML Validator](documentation/htmlchecker.png)
 
 ## *Responsiveness*
 
