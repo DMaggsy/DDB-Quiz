@@ -366,6 +366,8 @@ Code: Fixed by:     // Check if the username input value is empty
 
 ## *Wireframes*
 
+- Mobile
+
 ![Wireframe 1](documentation/mobile-home.png)
 
 ![Wireframe 2](documentation/mobile-start.png)
@@ -373,3 +375,13 @@ Code: Fixed by:     // Check if the username input value is empty
 ![Wireframe 3](documentation/mobile-question.png)
 
 ![Wireframe 4](documentation/mobile-endscreen.png)
+
+- Tablet
+
+![Wireframe 5](documentation/tablet-home.png)
+
+![Wireframe 6](documentation/tablet-start.png)
+
+![Wireframe 7](documentation/tablet-question.png)
+
+![Wireframe 8](documentation/tablet-endscreen.png)
