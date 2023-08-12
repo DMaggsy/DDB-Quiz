@@ -385,3 +385,14 @@ Code: Fixed by:     // Check if the username input value is empty
 ![Wireframe 7](documentation/tablet-question.png)
 
 ![Wireframe 8](documentation/tablet-endscreen.png)
+
+
+- Desktop
+
+![Wireframe 9](documentation/desktop-home.png)
+
+![Wireframe 10](documentation/desktop-start.png)
+
+![Wireframe 11](documentation/desktop-question.png)
+
+![Wireframe 12](documentation/desktop-endscreen.png)
