@@ -276,6 +276,10 @@ Code: Fixed by:     // Check if the username input value is empty
 
      - [Desktop](documentation/1366x768_.gif)
 
-    - 
+    - 1680x1050
+
+     - [Desktop](documentation/1680x1050_.gif)
+
+    
     
 ## *Deployment*
