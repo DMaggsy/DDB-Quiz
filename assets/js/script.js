@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Please enter a username in order to proceed.');
       return;
     }
-      // Hide the start text
-      document.getElementById('start-text').style.display = 'none';
+    // Hide the start text
+    document.getElementById('start-text').style.display = 'none';
 
-      // Show the "Good Luck!" text
-      document.getElementById('good-luck-text').style.display = 'block';
+    // Show the "Good Luck!" text
+    document.getElementById('good-luck-text').style.display = 'block';
 
     // Hide Question container
     document.getElementById('question-container').style.display = 'none';
@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-
     // Return the result element
     return resultElement;
   }
@@ -328,33 +327,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to handle exit button click
     function handleExitClick() {
-    // Reset the quiz state
-    currentCategoryIndex = 0;
-    currentQuestionIndex = 0;
-    score = 0;
-    document.getElementById('shipwreck-score').innerText = 'Score: 0';
-    document.getElementById('smallboat-score').innerText = 'Score: 0';
-    document.getElementById('pirateship-score').innerText = 'Score: 0';
-    document.getElementById('results').innerHTML = '';
+      // Reset the quiz state
+      currentCategoryIndex = 0;
+      currentQuestionIndex = 0;
+      score = 0;
+      document.getElementById('shipwreck-score').innerText = 'Score: 0';
+      document.getElementById('smallboat-score').innerText = 'Score: 0';
+      document.getElementById('pirateship-score').innerText = 'Score: 0';
+      document.getElementById('results').innerHTML = '';
 
-    // Hide the themes
-    shipwreckTheme.style.display = 'none';
-    smallboatTheme.style.display = 'none';
-    pirateshipTheme.style.display = 'none';
+      // Hide the themes
+      shipwreckTheme.style.display = 'none';
+      smallboatTheme.style.display = 'none';
+      pirateshipTheme.style.display = 'none';
 
-    // Hide the end screen
-    endScreen.style.display = 'none';
-    // Show the username input
-    document.getElementById('username-input').style.display = 'block';
-    // Show the "Enter username" button and set its display to flex
-    document.getElementById('enter-username').style.display = 'flex';
-    // Show start text
-    startText.style.display = 'block';
-    // Hide the Question container
-    document.getElementById('question-container').style.display = 'none';
-    // Reset the username input value
-    usernameInput.value = '';
-  }
+      // Hide the end screen
+      endScreen.style.display = 'none';
+      // Show the username input
+      document.getElementById('username-input').style.display = 'block';
+      // Show the "Enter username" button and set its display to flex
+      document.getElementById('enter-username').style.display = 'flex';
+      // Show start text
+      startText.style.display = 'block';
+      // Hide the Question container
+      document.getElementById('question-container').style.display = 'none';
+      // Reset the username input value
+      usernameInput.value = '';
+    }
 
     // Determine the theme based on the score percentage
     if (scorePercentage >= 0 && scorePercentage <= 33.33) {
