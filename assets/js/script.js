@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
       optionButton.addEventListener('click', selectOption);
       optionsElement.appendChild(optionButton);
     }
-
+    
     // Get the result element
     let resultElement = document.createElement('div');
 
@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return resultElement;
   }
 
-
   // Get the question container elements
   let questionContainer = document.getElementById('question-container');
   let questionElement = document.getElementById('question');
@@ -198,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Add event listener to the submit button
   submitButton.addEventListener('click', submitAnswer);
-
+  
   // Function to handle option selection
   function selectOption(event) {
     let selectedOption = event.target;
@@ -218,6 +217,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check if an option is selected
     let selectedOption = optionsElement.querySelector('.selected');
     if (!selectedOption) {
+      // If no option is selected, display an error message and exit the function
+      alert('Please select an option to proceed.');
       return; // Exit the function if no option is selected
     }
 
@@ -264,9 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-
-
-
   // Function to end the quiz and display the result
   function endQuiz() {
     // Get the end screen element
@@ -279,8 +277,6 @@ document.addEventListener('DOMContentLoaded', function () {
     endScreen.style.display = 'block';
 
   }
-
-
 
   // Function to calculate the total number of questions in all categories
   function getTotalQuestionsCount() {
