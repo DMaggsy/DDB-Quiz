@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
       shipwreckResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Oh No! Badluck, you're shipwrecked!</h1>
-        <img src="assets/images/Shipwreck.png" alt="Shipwrecked"/>
+        <img src="assets/images/Shipwreck.webp" alt="Shipwrecked"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
         <button id="end-screen-exit-button">X</button>
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
       smallboatResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>You just about got away!</h1>
-        <img src="assets/images/smallboat.png" alt="Small boat"/>
+        <img src="assets/images/smallboat.webp" alt="Small boat"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
         <button id="end-screen-exit-button">X</button>
@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pirateshipResults.innerHTML = `
         <h2>Username: <strong>${usernameInput.value}</strong></h2>
         <h1>Smooth Sailing! Nice one!</h1>
-        <img src="assets/images/Pirateship.png" alt="Pirate ship"/>
+        <img src="assets/images/Pirateship.webp" alt="Pirate ship"/>
         <h2>Score: <strong>${scorePercentage.toFixed(2)}%</strong></h2>
         <h2>Thanks for playing!</h2>
         <button id="end-screen-exit-button">X</button>
