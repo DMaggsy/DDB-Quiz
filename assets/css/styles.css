@@ -1,17 +1,29 @@
-/* Add the following CSS to your styles.css file */
+/* ========================= */
+/* 1. Global Styles & Resets */
+/* ========================= */
 
-/* Reset default margin and padding */
+/* Reset default margin and padding for all elements */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Basic body and html styles */
 html, body {
-  font-size: calc(60% + 0.8vmin);
   width: 100%;
+  font-size: calc(60% + 0.8vmin);
   font-family: 'Roboto', sans-serif;
+  background: url('../images/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
+/* ================== */
+/* 2. Typography */
+/* ================== */
 h1 {
   font-size: 1.6em; /* relative to the base font size set on the html/body */
 }
@@ -21,17 +33,40 @@ h2 {
   margin: 20px;
 }
 
-/* Set a background image for the body */
-body {
-  background: url('../images/background.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-attachment: fixed;
+/* Style the header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
-/* Style the container */
+.header h1 {
+  color: #000000;
+  margin-bottom: 20%;
+}
+
+.content h2 {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+#start-text {
+  color: black;
+}
+
+#good-luck-text {
+  color: black;
+}
+
+/* ================== */
+/* 3. Style the Layout/Structure */
+/* ================== */
 .container {
   display: flex;
   flex-direction: column;
@@ -49,20 +84,12 @@ body {
   color: rgb(2, 1, 0);
 }
 
-#start-text {
-  color: black;
-}
-
-#good-luck-text {
-  color: black;
-}
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-bottom: 40px;
-  
 }
 
 #username-input {
@@ -75,8 +102,11 @@ body {
   color: #333333;
 }
 
+/* ================== */
+/* 4. Style the Exit Button */
+/* ================== */
 #end-screen-exit-button, .exit-button {
-  position: absolute; /* Change this to relative */
+  position: absolute; 
   top: 10px;
   left: 10px;
   background-color: red;
@@ -93,6 +123,9 @@ body {
   overflow: hidden; /* To ensure that nothing spills out of the button */
 }
 
+/* ================================ */
+/* 5. Components & Elements */
+/* ================================ */
 #start-quiz {
   display: none;
 }
@@ -100,6 +133,7 @@ body {
 #shipwreck-score, #smallboat-score, #pirateship-score {
   display: none;
 }
+
 #question-container {
   display: none;
 }
@@ -130,6 +164,7 @@ body {
   margin: 20px;
   color: white
 }
+
 .option-btn.selected {
   background-color: yellow;
   border: #333333;
@@ -150,29 +185,6 @@ body {
   color: black
 }
 
-/* Style the header */
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
-.header h1 {
-  color: #333333;
-  margin-bottom: 20%;
-}
-
-.content h2 {
-  color: #333333;
-  margin-bottom: 10px;
-}
-
-.content p {
-  color: #666666;
-  margin-bottom: 20px;
-}
-
 button {
   background-color: #4caf50;
   color: #ffffff;
@@ -187,19 +199,6 @@ button:hover {
   color: black
 }
 
-#github {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  max-width: 40px;
-  max-height: 40px;
-  cursor: pointer;
-  margin: 5px;
-  border-radius: 5px;
-  z-index: 9999;
-  padding: 0; /* Add this to reset any default padding */
-}
-
 .Author {
   text-align: center;
   margin-top: 20%;
@@ -212,11 +211,34 @@ button:hover {
   justify-content: center;
 }
 
+/* ================================ */
+/* 6. Styling the Images */
+/* ================================ */
+
+/* Style the end screen images */
 img {
   margin: 20px;
   max-width: 200px;
   max-height: 200px;
 }
+
+/* Style the Github Logo */
+#github {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  max-width: 50px;
+  max-height: 50px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  z-index: 9999;
+  padding: 0; /* Add this to reset any default padding */
+}
+
+/* ================================ */
+/* 7. Media Queries */
+/* ================================ */
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
