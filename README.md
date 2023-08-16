@@ -346,6 +346,8 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 - The code template was taken from [Code Institute](https://codeinstitute.net/)
 
+- The GitHub logo was taken from [GitHub](https://github.com/)
+
 - Screenshots and videos were recording for the Readme file using [Snipping Tool](https://support.microsoft.com/en-us/windows/open-snipping-tool-and-take-a-screenshot-a35ac9ff-4a58-24c9-3253-f12bac9f9d44#:~:text=Press%20Windows%20logo%20key%20%2B%20Shift,%2C%20and%20Free%2Dform%20mode.)
 
 
