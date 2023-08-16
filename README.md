@@ -2,7 +2,8 @@
 
 # *The Fresh Quiz*
 
-![Intro Image](documentation/startingshot.png)
+![Responsive Mockup](documentation/responsive-mockup.png)
+
 
 <hr>
 
@@ -10,12 +11,13 @@
 
 This quiz will cover an ocean themed set of questions. This will test your knowledge on ocean inhabitants, Human interactions with the sea & Ocean general knowledge. All questions are multiple choice, and at the end of the quiz you will be given your score. You are required to enter a username at the beginning of the quiz so we can log your score and display your result at the end. The overall theme of the quiz is based on the ocean and pirates, hence the instruction to outrun the pirates!
 
+![Intro Image](documentation/startingshot.png)
+
 <hr>
-The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
+
+The site can be accessed by this ![link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
 <br>
-
-![Responsive Mockup](documentation/responsive-mockup.png)
 
 <hr> 
 
@@ -64,7 +66,7 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - The background image features an old fashioned ship to fit in with the theme of the ocean and pirates.
 
-![Background Image](assets/images/background.jpg)
+![Background Image](assets/images/background.webp)
 
 <hr>
 
@@ -155,19 +157,13 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
  - Solved Bugs
 
- 1. When using the exit button, nothing was happening. We were getting an error in the console: "script.js:87 Uncaught TypeError: Cannot set properties of null (setting 'innerText') at HTMLButtonElement.<anonymous> (script.js:87:48)."
+1. Exit Button Issue
 
- This script refers to this line within the main Javascript file (under add event listener for "Exit Quiz" button): document.getElementById('score').innerText = 'Score: 0';
+Problem: Clicking the exit button didn't produce any action. An error appeared in the console pointing to the "Exit Quiz" button functionality where it was trying to reset a score display.
+
+Solution: I addressed this by ensuring that all the individual quiz scores (Shipwreck, Smallboat, and Pirateship) are reset when the exit button is pressed.
 
  ![Bug 1](documentation/exitbug.png)
-
- ![Bug 1 Continued](documentation/exitbugsource.png)
-
- I solved the issue by removing the above line and adding in the shipwreck, smallboat & pirateship scores to reset respectively. 
-
-document.getElementById('shipwreck-score').innerText = 'Score: 0';
-document.getElementById('smallboat-score').innerText = 'Score: 0';
-document.getElementById('pirateship-score').innerText = 'Score: 0';
 
 <hr>
 
@@ -176,35 +172,35 @@ document.getElementById('pirateship-score').innerText = 'Score: 0';
 We needed it to work so users had to enter a username before proceeding. If they try just clicking the Enter username button without having 
 typed in a username, we need to show an error message staing "Please enter a username in order to proceed."
 
-![Bug 2](documentation/usernamebugexample.gif)
 
-I fixed this by implementing an if statement to check if the username input is blank. If it is, then the error message will be displayed. If it is not blank, then the quiz will start as normal. As you can see from the GIF above, the quiz was allowing the user to proceed without entering a username. 
+2. Username Entry Issue
 
-Code: Fixed by:     // Check if the username input value is empty
-    if (username === '') {
-    // If the username input value is empty, display an error message and exit the function
-    alert('Please enter a username in order to proceed.');
-    return;
-  }
+Problem: Users could proceed by clicking the "Enter Username" button without actually providing a username.
+
+Expected Behavior: The application should prompt users to enter a username before they can continue. If they try to move forward without entering one, an error message should be displayed.
+
+Solution: I introduced a mechanism that checks for the presence of a username. If the input is empty, an error alert pops up prompting the user to enter a username. This ensures that users can't proceed without providing a name.
+
+
 
 <hr>
 
 ## *Manual Testing*
 
-| feature | action | expected result | tested | passed | comments |
-| --- | --- | --- | --- | --- | --- |
-| Username Data Field | Click on field | User can start typing username | Yes | Yes | |
-| Username Data Field | Type in username | Username is displayed in field | Yes | Yes | |
-| Enter Username Button | Click on Enter Username button | Quiz accepts username | Yes | Yes | |
-| Enter Username Button | Click on Enter Username button | Quiz does not accept blank username | Yes | Yes | |
-| Start Quiz Button | Click on Start Quiz button | Quiz starts | Yes | Yes | |
-| Multiple Choice Answers | Click on answer | Answer changes colour | Yes | Yes | |
-| Submit Answer Button | Click on Submit Answer button | Answer is submitted | Yes | Yes | |
-| Submit Answer Button | Click on Submit Answer button without selected an answer | Quiz does not accept blank answer | Yes | Yes | |
-| Exit Quiz Button | Click on Exit Quiz button | Quiz exits | Yes | Yes | |
-| Shipwreck Theme | Score between 0-33.33% | Shipwreck theme is displayed | Yes | Yes | |
-| Smallboat Theme | Score between 33.34-66.33% | Smallboat theme is displayed | Yes | Yes | |
-| Pirateship Theme | Score between 66.34-100% | Pirateship theme is displayed | Yes | Yes | | 
+| feature | action | expected result | tested | passed |
+| --- | --- | --- | --- | --- |
+| Username Data Field | Click on field | User can start typing username | Yes | Yes |
+| Username Data Field | Type in username | Username is displayed in field | Yes | Yes |
+| Enter Username Button | Click on Enter Username button | Quiz accepts username | Yes | Yes |
+| Enter Username Button | Click on Enter Username button | Quiz does not accept blank username | Yes | Yes |
+| Start Quiz Button | Click on Start Quiz button | Quiz starts | Yes | Yes |
+| Multiple Choice Answers | Click on answer | Answer changes colour | Yes | Yes |
+| Submit Answer Button | Click on Submit Answer button | Answer is submitted | Yes | Yes |
+| Submit Answer Button | Click on Submit Answer button without selected an answer | Quiz does not accept blank answer | Yes | Yes |
+| Exit Quiz Button | Click on Exit Quiz button | Quiz exits | Yes | Yes |
+| Shipwreck Theme | Score between 0-33.33% | Shipwreck theme is displayed | Yes | Yes |
+| Smallboat Theme | Score between 33.34-66.33% | Smallboat theme is displayed | Yes | Yes |
+| Pirateship Theme | Score between 66.34-100% | Pirateship theme is displayed | Yes | Yes |
 
 ## *Testing*
 
