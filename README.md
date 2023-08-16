@@ -15,7 +15,7 @@ This quiz will cover an ocean themed set of questions. This will test your knowl
 
 <hr>
 
-The site can be accessed by this ![link](https://dmaggsy.github.io/The-Fresh-Quiz/)
+The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
 <br>
 
@@ -227,7 +227,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 ## *Validator Testing*
 
-- HTML 
+### HTML 
 
 - The HTML code was tested using [W3C HTML Validator](https://validator.w3.org/).
 
@@ -236,7 +236,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 ![HTML Validator](documentation/htmlchecker.png)
 
 
-- CSS
+### CSS
 
 - The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
@@ -245,27 +245,12 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 ![CSS Validator](documentation/csschecker.png)
 
 
-- Javascript
+### Javascript
 
 - The Javascript code was tested using [JSHint](https://jshint.com/).
 
 ![Javascript Validator 1](documentation/jshint1.png)
 
-![Javascript Validator 2](documentation/jshint2.png)
-
-![Javascript Validator 3](documentation/jshint3.png)
-
-![Javascript Validator 4](documentation/jshint4.png)
-
-![Javascript Validator 5](documentation/jshint5.png)
-
-![Javascript Validator 6](documentation/jshint6.png)
-
-![Javascript Validator 7](documentation/jshint7.png)
-
-![Javascript Validator 8](documentation/jshint8.png)
-
-![Javascript Validator 9](documentation/jshint9.png)
 
 ## *Responsiveness*
 
