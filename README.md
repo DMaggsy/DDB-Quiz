@@ -151,6 +151,8 @@ The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz
 
 - The font used throughout the quiz is "Roboto sans-serif". This font was chosen as it is easy to read and is a common font used on many websites.
 
+![Font](documentation/fontused.png)
+
 <hr>
 
 ## *Bugs*
