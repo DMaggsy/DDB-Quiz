@@ -11,13 +11,14 @@
 
 This quiz will cover an ocean themed set of questions. This will test your knowledge on ocean inhabitants, Human interactions with the sea & Ocean general knowledge. All questions are multiple choice, and at the end of the quiz you will be given your score. You are required to enter a username at the beginning of the quiz so we can log your score and display your result at the end. The overall theme of the quiz is based on the ocean and pirates, hence the instruction to outrun the pirates!
 
-![Intro Image](documentation/startingshot.png)
-
-<hr>
+<br>
 
 The site can be accessed by this [link](https://dmaggsy.github.io/The-Fresh-Quiz/)
 
 <br>
+
+![Intro Image](documentation/startingshot.png)
+
 
 <hr> 
 
@@ -169,20 +170,15 @@ Solution: I addressed this by ensuring that all the individual quiz scores (Ship
 
 <hr>
 
-2. Users were able to click the enter username button, without having actually entered a username. Meaning it could be left blank. 
-
-We needed it to work so users had to enter a username before proceeding. If they try just clicking the Enter username button without having 
-typed in a username, we need to show an error message staing "Please enter a username in order to proceed."
-
-
 2. Username Entry Issue
+
+![Bug 2](documentation/usernamebugexample.gif)
 
 Problem: Users could proceed by clicking the "Enter Username" button without actually providing a username.
 
 Expected Behavior: The application should prompt users to enter a username before they can continue. If they try to move forward without entering one, an error message should be displayed.
 
 Solution: I introduced a mechanism that checks for the presence of a username. If the input is empty, an error alert pops up prompting the user to enter a username. This ensures that users can't proceed without providing a name.
-
 
 
 <hr>
@@ -208,19 +204,19 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 - In order to confirm the correct functionality, responsiveness and user experience of the website, it was tested on the following browsers:
 
-  - Google Chrome
+  ### Google Chrome
 
     - ![Google Chrome](documentation/chrome1.png)
     - ![Google Chrome](documentation/chrome2.png)
     - ![Google Chrome](documentation/chrome3.png)
   
-  - Microsoft Edge
+  ### Microsoft Edge
   
     - ![Microsoft Edge](documentation/edge1.png)
     - ![Microsoft Edge](documentation/edge2.png)
     - ![Microsoft Edge](documentation/edge3.png)
     
-  - Mozilla Firefox
+  ### Mozilla Firefox
    
     - ![Mozilla Firefox](documentation/firefox1.png)
     - ![Mozilla Firefox](documentation/firefox2.png)
@@ -258,7 +254,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 - The app was tested with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
 
-  - Mobile
+  ### Mobile
 
     - 320x480
 
@@ -276,7 +272,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
     ![Mobile 4](documentation/414x736_.gif)
 
-  - Tablet 
+  ### Tablet 
 
     - 600x960
 
@@ -294,7 +290,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
     ![Tablet 4](documentation/1366x1024_.gif)
 
-  - Desktop
+  ### Desktop
 
     - 1024x600
 
@@ -355,7 +351,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 ## *Wireframes*
 
-- Mobile
+### Mobile
 
 ![Wireframe 1](documentation/mobile-home.png)
 
@@ -365,7 +361,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 
 ![Wireframe 4](documentation/mobile-endscreen.png)
 
-- Tablet
+### Tablet
 
 ![Wireframe 5](documentation/tablet-home.png)
 
@@ -376,7 +372,7 @@ Solution: I introduced a mechanism that checks for the presence of a username. I
 ![Wireframe 8](documentation/tablet-endscreen.png)
 
 
-- Desktop
+### Desktop
 
 ![Wireframe 9](documentation/desktop-home.png)
 
